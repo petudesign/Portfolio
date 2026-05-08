@@ -1,6 +1,6 @@
-# Petteri Helttula Portfolio
+# Petu's Portfolio
 
-Personal product design portfolio for Petteri Helttula.
+Personal product design portfolio for Petu
 
 This is a static HTML, CSS, and JavaScript site built to present UX and product design case studies, writing, and background information. The portfolio includes project pages, an About page, a blog hub, and a small Project Companion interaction that helps visitors scan the work more quickly.
 
