@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Writing hub for Petteri Helttula's notes on product design, AI, automation, and growth.">
+    <title>Blog - Petteri Helttula</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body data-page="blog">
+    <header class="site-header">
+      <div class="brand">
+        <a class="top-link" href="index.html" aria-label="Back to home">Petteri Helttula</a>
+        <span>Design &amp; Code</span>
+      </div>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <a href="index.html#projects">Projects</a>
+        <a href="about.html">About</a>
+        <a class="active" href="blog.html">Blog</a>
+        <a href="https://drive.google.com/file/d/15QaOzodCL-Q-qqauEE26SKPag7V5eBde/view">Resume</a>
+        <a class="linkedin" href="https://www.linkedin.com/in/petteri-helttula/" aria-label="LinkedIn">in</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="page-hero blog-hero" aria-labelledby="blog-title">
+        <p class="eyebrow">Writing Hub</p>
+        <h1 id="blog-title">Notes on design, AI, automation, growth, and the messy bits between them.</h1>
+        <p class="page-intro">
+          Newest posts can live first by default. The filter below is ready for narrowing the feed once the writing starts piling up.
+        </p>
+      </section>
+
+      <section class="blog-hub" aria-labelledby="posts-title">
+        <div class="blog-toolbar" aria-label="Post filters">
+          <button class="filter-button active" type="button" data-filter="all">Newest</button>
+          <button class="filter-button" type="button" data-filter="design">Design</button>
+          <button class="filter-button" type="button" data-filter="ai">AI &amp; Automation</button>
+          <button class="filter-button" type="button" data-filter="growth">Growth</button>
+        </div>
+
+        <div class="post-list" id="posts-title">
+          <article class="post-row" data-category="design" data-date="2026-05-01">
+            <a href="#" aria-label="Open draft post">
+              <time datetime="2026-05-01">May 2026</time>
+              <span>Design note</span>
+              <h2>Draft post title goes here</h2>
+              <p>A short excerpt can live here once the first post exists.</p>
+            </a>
+          </article>
+
+          <article class="post-row" data-category="ai" data-date="2026-04-15">
+            <a href="#" aria-label="Open draft post">
+              <time datetime="2026-04-15">April 2026</time>
+              <span>AI &amp; Automation</span>
+              <h2>Another draft post title</h2>
+              <p>This is a placeholder row for agent workflows, automation notes, or practical AI experiments.</p>
+            </a>
+          </article>
+
+          <article class="post-row" data-category="growth" data-date="2026-03-20">
+            <a href="#" aria-label="Open draft post">
+              <time datetime="2026-03-20">March 2026</time>
+              <span>Growth</span>
+              <h2>A future growth/product essay</h2>
+              <p>Use this slot for product growth thinking, conversion details, onboarding, or experiments.</p>
+            </a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Built with Figma &amp; code.</span>
+      <a class="back-to-top" href="#top">Back to top</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

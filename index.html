@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Petteri Helttula's 2026 product design portfolio."
+    >
+    <title>Petteri Helttula - Product Design Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body data-page="home">
+    <header class="site-header">
+      <div class="brand">
+        <a class="top-link" href="#top" aria-label="Back to top">Petteri Helttula</a>
+        <span>Design &amp; Code</span>
+      </div>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <a class="active" href="#projects">Projects</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="https://drive.google.com/file/d/15QaOzodCL-Q-qqauEE26SKPag7V5eBde/view">Resume</a>
+        <a class="linkedin" href="https://www.linkedin.com/in/petteri-helttula/" aria-label="LinkedIn">in</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="tag-row">
+            <span class="tag tag-yellow">Product Designer @ ?</span>
+            <span class="tag tag-pink">Into AI, Automation &amp; Growth</span>
+          </div>
+          <h1 id="hero-title">
+            Moi <span class="wave" aria-hidden="true">&#128075;</span> I'm Petteri and
+            <span class="hero-line-product">this is my [2026] Product</span>
+            <span><em>Design</em> Portfolio.</span>
+          </h1>
+          <p class="hero-meta">
+            I design product details that make complex choices feel clearer and easier to act on.
+          </p>
+          <a class="hero-cta" href="about.html">
+            <span>Learn more about me</span>
+            <span class="hero-cta-icon" aria-hidden="true">
+              <svg viewBox="0 0 16 16" focusable="false">
+                <path d="M5 11L11 5"></path>
+                <path d="M6.5 5H11V9.5"></path>
+              </svg>
+            </span>
+          </a>
+        </div>
+
+        <aside class="featured" aria-label="Featured project preview">
+          <p class="eyebrow">Selected Projects</p>
+          <a class="featured-image" href="shavikki.html">
+            <img src="assets/shavikki-kaappikuva.png" alt="S-Hävikki branded food waste cabinet concept in a grocery store">
+            <span class="project-overlay">
+              <span class="project-overlay-tags">
+                <span>Service design concept</span>
+                <span>Food waste</span>
+              </span>
+              <span class="project-overlay-title">S-Hävikki</span>
+            </span>
+          </a>
+          <div class="selected-grid">
+            <a href="savings.html" aria-label="Open savings app case">
+              <img src="assets/savings-app.png" alt="Savings app interface preview">
+            </a>
+            <a href="dashboard.html" aria-label="Open dashboard case">
+              <img src="assets/dashboard.png" alt="Project dashboard interface preview">
+            </a>
+          </div>
+        </aside>
+      </section>
+
+      <section id="projects" class="project-section" aria-labelledby="projects-title">
+        <div class="section-heading">
+          <h2 id="projects-title">Other work</h2>
+          <p>(Still worth the look!)</p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card" id="filter-news">
+            <a class="project-media placeholder" href="filter-news.html" aria-label="FilterNews case"></a>
+            <div class="project-meta">
+              <h3>Managing cognitive load in news consumption</h3>
+              <span>FilterNews</span>
+              <time datetime="2026">2026</time>
+            </div>
+          </article>
+
+          <article class="project-card" id="elisa-audit">
+            <a class="project-media placeholder" href="elisa-audit.html" aria-label="Elisa UX audit case"></a>
+            <div class="project-meta">
+              <h3>A self-initiated UX audit of Elisa's checkout flow</h3>
+              <span>Elisa UX Audit</span>
+              <time datetime="2026">2026</time>
+            </div>
+          </article>
+
+          <article class="project-card" id="automotive">
+            <a class="project-media placeholder" href="automotive.html" aria-label="Automotive UX case"></a>
+            <div class="project-meta">
+              <h3>Did anyone test this while actually driving?</h3>
+              <span>Automotive UX</span>
+              <time datetime="2026">2026</time>
+            </div>
+          </article>
+
+          <article class="project-card" id="smartgrocer">
+            <a class="project-media placeholder" href="smartgrocer.html" aria-label="SmartGrocer case"></a>
+            <div class="project-meta">
+              <h3>Making weekly grocery planning feel less like work</h3>
+              <span>SmartGrocer</span>
+              <time datetime="2025">2025</time>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Built with Figma &amp; code.</span>
+      <a class="back-to-top" href="#top">Back to top</a>
+    </footer>
+
+    <section class="project-companion" aria-label="Project Companion">
+      <button
+        class="companion-trigger"
+        type="button"
+        aria-expanded="false"
+        aria-controls="companion-panel"
+      >
+        <span class="companion-trigger-icon" aria-hidden="true"></span>
+        <span>Project Companion</span>
+      </button>
+
+      <div class="companion-panel" id="companion-panel" hidden>
+        <div class="companion-header">
+          <span class="companion-header-icon" aria-hidden="true"></span>
+          <div>
+            <p>Project Companion</p>
+            <h2>Want the quick tour?</h2>
+          </div>
+          <button class="companion-close" type="button" aria-label="Close Project Companion">×</button>
+        </div>
+
+        <div class="companion-messages" aria-live="polite"></div>
+        <div class="companion-prompts" aria-label="Suggested questions"></div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
