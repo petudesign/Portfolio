@@ -4,7 +4,7 @@
 
 Personal product design portfolio for Petu
 
-This is a static HTML, CSS, and JavaScript site built to present UX and product design case studies, writing, and background information. The portfolio includes project pages, an About page, a blog hub, and a small Project Companion interaction that helps visitors scan the work more quickly.
+This is a static HTML, CSS, and JavaScript site built to present UX and product design case studies, writing, and background information. The portfolio includes project pages, an About page, a blog hub, and a small Portfolio Companion interaction that helps visitors scan the work more quickly.
 
 ## Structure
 
@@ -13,7 +13,7 @@ This is a static HTML, CSS, and JavaScript site built to present UX and product 
 - `blog.html` - writing hub and post filters
 - `*.html` case pages - individual project pages
 - `styles.css` - global styling and responsive layout
-- `script.js` - navigation, filtering, case timeline, Project Companion, and related interactions
+- `script.js` - navigation, filtering, case timeline, Portfolio Companion, and related interactions
 - `assets/` - images, fonts, and visual assets
 
 ## Running Locally

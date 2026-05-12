@@ -417,20 +417,20 @@ const ensureCompanion = () => {
 
   projectCompanion = document.createElement("section");
   projectCompanion.className = "project-companion";
-  projectCompanion.setAttribute("aria-label", "Project Companion");
+  projectCompanion.setAttribute("aria-label", "Portfolio Companion");
   projectCompanion.innerHTML = `
     <button class="companion-trigger" type="button" aria-expanded="false" aria-controls="companion-panel">
       <span class="companion-trigger-icon" aria-hidden="true"></span>
-      <span>Project Companion</span>
+      <span>Portfolio Companion</span>
     </button>
     <div class="companion-panel" id="companion-panel" hidden>
       <div class="companion-header">
         <span class="companion-header-icon" aria-hidden="true"></span>
         <div>
-          <p>Project Companion</p>
+          <p>Portfolio Companion</p>
           <h2>Want the quick tour?</h2>
         </div>
-        <button class="companion-close" type="button" aria-label="Close Project Companion">&times;</button>
+        <button class="companion-close" type="button" aria-label="Close Portfolio Companion">&times;</button>
       </div>
       <div class="companion-messages" aria-live="polite"></div>
       <div class="companion-prompts" aria-label="Suggested questions"></div>
