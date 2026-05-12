@@ -60,15 +60,42 @@
 
         <aside class="featured" aria-label="Featured project preview">
           <p class="eyebrow">Selected Projects</p>
-          <a class="featured-image" href="shavikki.html" aria-label="Open S-Hävikki case study">
+          <a class="featured-image media-preview media-preview-shavikki" href="shavikki.html" aria-label="Open S-Hävikki case study">
             <img src="assets/shavikki-kaappikuva.png" alt="S-Hävikki branded food waste cabinet concept in a grocery store">
+            <span class="case-card-tools" aria-label="Case includes 6 minute read">
+              <span class="case-card-tool">
+                <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                  <circle cx="8" cy="8" r="6"></circle>
+                  <path d="M8 4.8V8l2.3 1.4"></path>
+                </svg>
+                <span>6 min</span>
+              </span>
+            </span>
           </a>
           <div class="selected-grid">
-            <a href="savings.html" aria-label="Open savings app case">
+            <a class="media-preview media-preview-savings" href="savings.html" aria-label="Open savings app case">
               <img src="assets/savings-app.png" alt="Savings app interface preview">
+              <span class="case-card-tools" aria-label="Case includes 4 minute read">
+                <span class="case-card-tool">
+                  <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                    <circle cx="8" cy="8" r="6"></circle>
+                    <path d="M8 4.8V8l2.3 1.4"></path>
+                  </svg>
+                  <span>4 min</span>
+                </span>
+              </span>
             </a>
-            <a href="dashboard.html" aria-label="Open dashboard case">
+            <a class="media-preview media-preview-dashboard" href="dashboard.html" aria-label="Open dashboard case">
               <img src="assets/dashboard.png" alt="Project dashboard interface preview">
+              <span class="case-card-tools" aria-label="Case includes 3 minute read">
+                <span class="case-card-tool">
+                  <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                    <circle cx="8" cy="8" r="6"></circle>
+                    <path d="M8 4.8V8l2.3 1.4"></path>
+                  </svg>
+                  <span>3 min</span>
+                </span>
+              </span>
             </a>
           </div>
         </aside>
@@ -81,7 +108,32 @@
 
         <div class="project-grid">
           <article class="project-card" id="filter-news">
-            <a class="project-media placeholder" href="filter-news.html" aria-label="FilterNews case"></a>
+            <a class="project-media project-media-video project-media-video-filter" href="filter-news.html" aria-label="FilterNews case">
+              <video
+                class="hover-preview-video"
+                src="assets/filter-news-preview.mp4"
+                muted
+                loop
+                playsinline
+                preload="auto"
+              ></video>
+              <span class="case-card-tools" aria-label="Case includes 5 minute read and video preview">
+                <span class="case-card-tool">
+                  <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                    <circle cx="8" cy="8" r="6"></circle>
+                    <path d="M8 4.8V8l2.3 1.4"></path>
+                  </svg>
+                  <span>5 min</span>
+                </span>
+                <span class="case-card-tool">
+                  <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                    <rect x="2.5" y="4" width="11" height="8" rx="1.4"></rect>
+                    <path class="tool-icon-fill" d="M7 6.3l3 1.7-3 1.7z"></path>
+                  </svg>
+                  <span>Video</span>
+                </span>
+              </span>
+            </a>
             <div class="project-meta">
               <h3>Managing cognitive load in news consumption</h3>
               <span>FilterNews</span>
@@ -90,16 +142,51 @@
           </article>
 
           <article class="project-card" id="elisa-audit">
-            <a class="project-media placeholder" href="elisa-audit.html" aria-label="Elisa UX audit case"></a>
+            <a class="project-media project-media-video" href="elisa-audit.html" aria-label="Elisa UX audit case">
+              <video
+                class="hover-preview-video"
+                src="assets/elisa-checkout-preview.mp4"
+                muted
+                loop
+                playsinline
+                preload="auto"
+              ></video>
+              <span class="case-card-tools" aria-label="Case includes 4 minute read and video preview">
+                <span class="case-card-tool">
+                  <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                    <circle cx="8" cy="8" r="6"></circle>
+                    <path d="M8 4.8V8l2.3 1.4"></path>
+                  </svg>
+                  <span>4 min</span>
+                </span>
+                <span class="case-card-tool">
+                  <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                    <rect x="2.5" y="4" width="11" height="8" rx="1.4"></rect>
+                    <path class="tool-icon-fill" d="M7 6.3l3 1.7-3 1.7z"></path>
+                  </svg>
+                  <span>Video</span>
+                </span>
+              </span>
+            </a>
             <div class="project-meta">
-              <h3>A self-initiated UX audit of Elisa's checkout flow</h3>
+              <h3>You pressed checkout. So why are you still shopping?</h3>
               <span>Elisa UX Audit</span>
               <time datetime="2026">2026</time>
             </div>
           </article>
 
           <article class="project-card" id="automotive">
-            <a class="project-media placeholder" href="automotive.html" aria-label="Automotive UX case"></a>
+            <a class="project-media placeholder" href="automotive.html" aria-label="Automotive UX case">
+              <span class="case-card-tools" aria-label="Case includes 3 minute read">
+                <span class="case-card-tool">
+                  <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                    <circle cx="8" cy="8" r="6"></circle>
+                    <path d="M8 4.8V8l2.3 1.4"></path>
+                  </svg>
+                  <span>3 min</span>
+                </span>
+              </span>
+            </a>
             <div class="project-meta">
               <h3>Did anyone test this while actually driving?</h3>
               <span>Automotive UX</span>
@@ -108,7 +195,17 @@
           </article>
 
           <article class="project-card" id="smartgrocer">
-            <a class="project-media placeholder" href="smartgrocer.html" aria-label="SmartGrocer case"></a>
+            <a class="project-media placeholder" href="smartgrocer.html" aria-label="SmartGrocer case">
+              <span class="case-card-tools" aria-label="Case includes 4 minute read">
+                <span class="case-card-tool">
+                  <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                    <circle cx="8" cy="8" r="6"></circle>
+                    <path d="M8 4.8V8l2.3 1.4"></path>
+                  </svg>
+                  <span>4 min</span>
+                </span>
+              </span>
+            </a>
             <div class="project-meta">
               <h3>Making weekly grocery planning feel less like work</h3>
               <span>SmartGrocer</span>

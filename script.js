@@ -225,32 +225,32 @@ const companionContent = {
   },
   "project-elisa-audit": {
     intro:
-      "This companion is tuned for the Elisa UX Audit case, with questions around checkout friction, trust, and conversion clarity.",
+      "This companion is tuned for the Elisa checkout audit, with questions around purchase intent, upsell timing, and product reassurance.",
     prompts: [
       {
         label: "Give me the 30-second version",
         answer:
-          "This is a self-initiated UX audit of Elisa's checkout flow. The case looks at friction, trust gaps, and moments where unclear next steps could make a customer hesitate.",
+          "This is a self-initiated audit of Elisa's checkout flow. The main issue is that after pressing checkout, the user hits a full upsell screen before reaching payment. The recommendation keeps the upsell opportunity, but moves it into the checkout summary where it does not block the purchase.",
       },
       {
         label: "What is this project about?",
         answer:
-          "A self-initiated UX audit of a checkout flow, focused on finding friction, trust gaps, and moments where the next step could be clearer.",
+          "A checkout UX audit focused on protecting purchase intent after a user has already decided to buy a high-price phone.",
       },
       {
         label: "What should I look for?",
         answer:
-          "Look for practical critique: not just what looks off, but what might slow a customer down or make them hesitate.",
+          "Look for the product reasoning: the case does not argue that upsells are wrong, only that their timing and hierarchy make the flow feel like shopping again instead of checkout.",
       },
       {
         label: "What did Petteri learn?",
         answer:
-          "He learned how quickly small checkout uncertainties can stack up, especially when price, commitment, or next steps are not fully clear.",
+          "He learned that checkout needs reassurance before discovery. If the selected product disappears and add-ons take over, the user has to rebuild confidence before paying.",
       },
       {
         label: "What would he improve next?",
         answer:
-          "He would separate heuristic critique from user evidence more clearly and test the riskiest assumptions with real shoppers.",
+          "He would test the proposed flow with real shoppers, then compare completion rate, add-on attach rate, time to payment, and backtracking.",
       },
       {
         label: "How does Petteri approach design?",
@@ -390,7 +390,7 @@ const caseStudies = [
     year: "2026",
     href: "elisa-audit.html",
     image: "assets/elisa-audit.png",
-    description: "A self-initiated look at checkout friction, trust gaps, and conversion clarity.",
+    description: "Protecting purchase intent by moving upsells out of the blocking checkout step.",
   },
   {
     id: "project-automotive",
@@ -538,6 +538,60 @@ document.addEventListener("keydown", (event) => {
 const caseStudyTargets = document.querySelectorAll(
   ".featured-image, .selected-grid a, .project-media"
 );
+const hoverPreviewVideos = document.querySelectorAll(".hover-preview-video");
+const caseVideoToggles = document.querySelectorAll(".case-video-toggle");
+
+hoverPreviewVideos.forEach((video) => {
+  const previewCard = video.closest(".project-media");
+
+  video.addEventListener("loadedmetadata", () => {
+    video.currentTime = 0.01;
+  });
+
+  previewCard?.addEventListener("pointerenter", (event) => {
+    if (event.pointerType !== "mouse") {
+      return;
+    }
+
+    video.play().catch(() => {});
+  });
+
+  previewCard?.addEventListener("pointerleave", () => {
+    video.pause();
+    video.currentTime = 0.01;
+  });
+});
+
+caseVideoToggles.forEach((caseVideoToggle) => {
+  const caseMediaShell = caseVideoToggle.closest(".case-media-shell");
+  const caseVideo = caseMediaShell?.querySelector(".case-video");
+  const caseVideoToggleLabel = caseVideoToggle.querySelector(".case-video-toggle-label");
+
+  if (!caseVideo) {
+    return;
+  }
+
+  caseVideoToggle.addEventListener("click", () => {
+    if (caseVideo.paused) {
+      caseVideo.play().catch(() => {});
+      caseVideoToggle.classList.remove("is-paused");
+      caseVideoToggle.setAttribute("aria-label", "Pause video");
+      caseVideoToggle.setAttribute("aria-pressed", "false");
+      if (caseVideoToggleLabel) {
+        caseVideoToggleLabel.textContent = "Pause";
+      }
+      return;
+    }
+
+    caseVideo.pause();
+    caseVideoToggle.classList.add("is-paused");
+    caseVideoToggle.setAttribute("aria-label", "Play video");
+    caseVideoToggle.setAttribute("aria-pressed", "true");
+    if (caseVideoToggleLabel) {
+      caseVideoToggleLabel.textContent = "Play";
+    }
+  });
+});
 
 caseStudyTargets.forEach((target) => {
   const updateCursorPosition = (event) => {
@@ -615,6 +669,7 @@ if (caseSections.length && timelineLinks.length) {
     research: "problem-framing",
     analysis: "problem-framing",
     interviews: "problem-framing",
+    tradeoffs: "problem-framing",
     findings: "problem-framing",
   };
 

@@ -38,6 +38,13 @@
           <div>
             <h2>Overview</h2>
             <p>A news-consumption case about reducing overload and helping people find a calmer information rhythm.</p>
+            <p class="case-read-time">
+              <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                <circle cx="8" cy="8" r="6"></circle>
+                <path d="M8 4.8V8l2.3 1.4"></path>
+              </svg>
+              <span>5 min read</span>
+            </p>
           </div>
           <div>
             <h2>My role</h2>
@@ -45,10 +52,25 @@
           </div>
           <div>
             <h2>Timeline</h2>
-            <p>2026</p>
+            <p>05/2026</p>
           </div>
         </div>
-        <img class="case-image" src="assets/filter-news.png" alt="FilterNews interface preview">
+        <div class="case-image case-media-shell">
+          <video
+            class="case-video"
+            src="assets/filter-news-preview.mp4"
+            poster="assets/filter-news.png"
+            autoplay
+            muted
+            loop
+            playsinline
+            aria-label="FilterNews interface preview"
+          ></video>
+          <button class="case-video-toggle" type="button" aria-label="Pause video" aria-pressed="false">
+            <span class="case-video-toggle-icon" aria-hidden="true"></span>
+            <span class="case-video-toggle-label">Pause</span>
+          </button>
+        </div>
         <section class="case-impact" aria-labelledby="takeaways-title">
           <h2 id="takeaways-title">Project Takeaways</h2>
           <div class="impact-grid">
