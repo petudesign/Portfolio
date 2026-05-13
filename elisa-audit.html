@@ -25,8 +25,8 @@
         <a class="active" href="index.html#projects">Projects</a>
         <a href="about.html">About</a>
         <a href="blog.html">Blog</a>
-        <a href="https://drive.google.com/file/d/15QaOzodCL-Q-qqauEE26SKPag7V5eBde/view">Resume</a>
-        <a class="linkedin" href="https://www.linkedin.com/in/petteri-helttula/" aria-label="LinkedIn">in</a>
+        <a href="https://drive.google.com/file/d/15QaOzodCL-Q-qqauEE26SKPag7V5eBde/view" target="_blank" rel="noopener noreferrer">Resume</a>
+        <a class="linkedin" href="https://www.linkedin.com/in/petteri-helttula/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
       </nav>
     </header>
 
@@ -49,7 +49,12 @@
           </div>
           <div>
             <h2>My role</h2>
-            <p>UX research, product critique, UX writing, redesign direction.</p>
+            <div class="case-role-tags" aria-label="Project roles">
+              <span>UX research</span>
+              <span>Checkout audit</span>
+              <span>UX writing</span>
+              <span>UX critique</span>
+            </div>
           </div>
           <div>
             <h2>Timeline</h2>
@@ -84,7 +89,7 @@
               <p>The flow asks the user to evaluate accessories, subscriptions, insurance, and streaming before confirming the product they came to buy.</p>
             </article>
             <article>
-              <h3>What I'd do differently now</h3>
+              <h3>What I'd do next</h3>
               <p>I would validate the redesign with real shoppers and compare completion rate, add-on attach rate, backtracking, and confidence before payment.</p>
             </article>
           </div>
@@ -129,6 +134,12 @@
             <h3>Analysis</h3>
             <p>The main problem is not that Elisa offers add-ons. The problem is that the add-ons become the dominant experience at the exact moment the user expects forward progress.</p>
             <p>Checkout is a confirmation phase. The user needs to know what they are buying, what it costs, what happens next, and whether they can safely continue. A full-screen upsell interrupts that mental model and adds several new decisions before the original one has been completed.</p>
+            <figure class="case-section-figure">
+              <button class="case-image-zoom" type="button" aria-label="Open upsell screen image larger">
+                <img src="assets/elisa-upsell-screen.png" alt="Elisa upsell screen showing subscriptions, services, accessories, and insurance options before the user reaches payment.">
+              </button>
+              <figcaption>The interruption screen turns checkout into another product evaluation moment.</figcaption>
+            </figure>
             <p>The second issue appears after the user pushes through the upsell screen. On the checkout page, the phone itself almost disappears: no strong image, weak product detail, and little visual reassurance. For a high-price purchase, that is the wrong tradeoff.</p>
           </section>
           <section class="case-section case-subsection" id="tradeoffs">
@@ -144,6 +155,12 @@
               <li><strong>The primary product loses visual priority.</strong> The phone should be the anchor of the checkout, but it becomes easy to miss.</li>
               <li><strong>The cart creates a small navigation dead end.</strong> If users cannot easily return to the product page, checkout becomes the fallback path for verification.</li>
             </ul>
+            <figure class="case-section-figure">
+              <button class="case-image-zoom" type="button" aria-label="Open original checkout image larger">
+                <img src="assets/elisa-current-checkout.png" alt="Original Elisa checkout page with a text-heavy order summary and weak visual emphasis on the selected phone.">
+              </button>
+              <figcaption>The original checkout confirms payment details, but the selected phone has little visual weight.</figcaption>
+            </figure>
           </section>
           <section class="case-section" id="solution">
             <h2>Solution</h2>
@@ -155,6 +172,12 @@
             <h2>Final design</h2>
             <p>The redesigned checkout would place the phone summary at the top of the right column, visible before any add-on recommendation. The left column stays focused on login, customer details, delivery, and payment.</p>
             <p>Recommended add-ons would sit below the product summary in a collapsible section. The default state should be calm and skimmable, with copy that makes the choice feel optional rather than required.</p>
+            <figure class="case-section-figure">
+              <button class="case-image-zoom" type="button" aria-label="Open final design image larger">
+                <img src="assets/elisa-final-design.png" alt="Redesigned Elisa checkout page with a visible phone order summary and optional recommendations in the right column.">
+              </button>
+              <figcaption>The proposed checkout keeps the phone visible first and moves recommendations into a secondary, optional position.</figcaption>
+            </figure>
             <ul>
               <li><strong>Order summary:</strong> "Your phone" with image, model, color, storage, and price.</li>
               <li><strong>Optional module:</strong> "Recommended add-ons" with a clear expand/collapse control.</li>

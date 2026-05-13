@@ -9,6 +9,7 @@ let companionPanel = document.querySelector(".companion-panel");
 let companionClose = document.querySelector(".companion-close");
 let companionMessages = document.querySelector(".companion-messages");
 let companionPrompts = document.querySelector(".companion-prompts");
+let companionHeaderIcon = document.querySelector(".companion-header-icon");
 
 const companionContent = {
   home: {
@@ -443,6 +444,7 @@ const ensureCompanion = () => {
   companionClose = document.querySelector(".companion-close");
   companionMessages = document.querySelector(".companion-messages");
   companionPrompts = document.querySelector(".companion-prompts");
+  companionHeaderIcon = document.querySelector(".companion-header-icon");
 };
 
 ensureCompanion();
@@ -527,6 +529,23 @@ if (projectCompanion && companionPanel && companionMessages && companionPrompts)
   });
 
   companionClose?.addEventListener("click", closeCompanion);
+
+  companionHeaderIcon?.addEventListener("click", () => {
+    companionHeaderIcon.classList.remove("is-petted");
+    companionHeaderIcon.classList.remove("show-pet-bubble");
+    void companionHeaderIcon.offsetWidth;
+    companionHeaderIcon.classList.add("is-petted");
+    companionHeaderIcon.classList.add("show-pet-bubble");
+  });
+
+  companionHeaderIcon?.addEventListener("animationend", (event) => {
+    if (event.animationName === "companion-pet") {
+      companionHeaderIcon.classList.remove("is-petted");
+      window.setTimeout(() => {
+        companionHeaderIcon.classList.remove("show-pet-bubble");
+      }, 1380);
+    }
+  });
 }
 
 document.addEventListener("keydown", (event) => {
@@ -540,6 +559,7 @@ const caseStudyTargets = document.querySelectorAll(
 );
 const hoverPreviewVideos = document.querySelectorAll(".hover-preview-video");
 const caseVideoToggles = document.querySelectorAll(".case-video-toggle");
+const caseImageZoomButtons = document.querySelectorAll(".case-image-zoom");
 
 hoverPreviewVideos.forEach((video) => {
   const previewCard = video.closest(".project-media");
@@ -574,6 +594,7 @@ caseVideoToggles.forEach((caseVideoToggle) => {
   caseVideoToggle.addEventListener("click", () => {
     if (caseVideo.paused) {
       caseVideo.play().catch(() => {});
+      caseVideo.dataset.userPaused = "false";
       caseVideoToggle.classList.remove("is-paused");
       caseVideoToggle.setAttribute("aria-label", "Pause video");
       caseVideoToggle.setAttribute("aria-pressed", "false");
@@ -584,6 +605,7 @@ caseVideoToggles.forEach((caseVideoToggle) => {
     }
 
     caseVideo.pause();
+    caseVideo.dataset.userPaused = "true";
     caseVideoToggle.classList.add("is-paused");
     caseVideoToggle.setAttribute("aria-label", "Play video");
     caseVideoToggle.setAttribute("aria-pressed", "true");
@@ -592,6 +614,88 @@ caseVideoToggles.forEach((caseVideoToggle) => {
     }
   });
 });
+
+const caseVideos = document.querySelectorAll(".case-video");
+
+if (caseVideos.length && "IntersectionObserver" in window) {
+  const caseVideoObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target;
+
+        if (!(video instanceof HTMLVideoElement)) {
+          return;
+        }
+
+        if (!entry.isIntersecting) {
+          video.pause();
+          return;
+        }
+
+        if (video.dataset.userPaused !== "true") {
+          video.play().catch(() => {});
+        }
+      });
+    },
+    { threshold: 0.16 }
+  );
+
+  caseVideos.forEach((video) => caseVideoObserver.observe(video));
+}
+
+if (caseImageZoomButtons.length) {
+  const lightbox = document.createElement("div");
+  lightbox.className = "case-image-lightbox";
+  lightbox.hidden = true;
+  lightbox.setAttribute("role", "dialog");
+  lightbox.setAttribute("aria-modal", "true");
+  lightbox.setAttribute("aria-label", "Expanded case image");
+  lightbox.innerHTML = `
+    <div class="case-image-lightbox-frame">
+      <button class="case-image-lightbox-close" type="button" aria-label="Close expanded image">&times;</button>
+      <img alt="">
+    </div>
+  `;
+  document.body.append(lightbox);
+
+  const lightboxImage = lightbox.querySelector("img");
+  const lightboxClose = lightbox.querySelector(".case-image-lightbox-close");
+
+  const closeLightbox = () => {
+    lightbox.hidden = true;
+    document.body.style.overflow = "";
+  };
+
+  caseImageZoomButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const image = button.querySelector("img");
+
+      if (!image || !lightboxImage) {
+        return;
+      }
+
+      lightboxImage.src = image.currentSrc || image.src;
+      lightboxImage.alt = image.alt;
+      lightbox.hidden = false;
+      document.body.style.overflow = "hidden";
+      lightboxClose?.focus();
+    });
+  });
+
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  lightboxClose?.addEventListener("click", closeLightbox);
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !lightbox.hidden) {
+      closeLightbox();
+    }
+  });
+}
 
 caseStudyTargets.forEach((target) => {
   const updateCursorPosition = (event) => {
@@ -673,6 +777,18 @@ if (caseSections.length && timelineLinks.length) {
     findings: "problem-framing",
   };
 
+  let currentTimelineParent = "";
+  timelineLinks.forEach((link) => {
+    const linkTarget = link.getAttribute("href")?.replace("#", "") || "";
+
+    if (link.classList.contains("timeline-child")) {
+      link.dataset.parent = currentTimelineParent;
+      return;
+    }
+
+    currentTimelineParent = linkTarget;
+  });
+
   const setActiveTimelineLink = () => {
     let activeId = caseSections[0].id;
 
@@ -684,10 +800,18 @@ if (caseSections.length && timelineLinks.length) {
 
     timelineLinks.forEach((link) => {
       const linkTarget = link.getAttribute("href")?.replace("#", "");
+      const parentTarget = childToParentTimelineMap[activeId];
+      const isChild = link.classList.contains("timeline-child");
+      const linkParent = link.dataset.parent || "problem-framing";
+
       link.classList.toggle("active", linkTarget === activeId);
       link.classList.toggle(
         "parent-active",
-        linkTarget === childToParentTimelineMap[activeId]
+        linkTarget === parentTarget
+      );
+      link.classList.toggle(
+        "is-child-group-open",
+        isChild && (activeId === linkParent || parentTarget === linkParent)
       );
     });
   };
