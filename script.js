@@ -381,7 +381,7 @@ const caseStudies = [
     meta: "Attention UX",
     year: "2026",
     href: "filter-news.html",
-    image: "assets/filter-news.png",
+    image: "assets/filternews-bbc.png",
     description: "Reducing cognitive load in news consumption through filtering and hierarchy.",
   },
   {
@@ -390,7 +390,7 @@ const caseStudies = [
     meta: "Checkout audit",
     year: "2026",
     href: "elisa-audit.html",
-    image: "assets/elisa-audit.png",
+    image: "assets/elisa-final-design.png",
     description: "Protecting purchase intent by moving upsells out of the blocking checkout step.",
   },
   {
@@ -769,13 +769,7 @@ if (caseImpact) {
 }
 
 if (caseSections.length && timelineLinks.length) {
-  const childToParentTimelineMap = {
-    research: "problem-framing",
-    analysis: "problem-framing",
-    interviews: "problem-framing",
-    tradeoffs: "problem-framing",
-    findings: "problem-framing",
-  };
+  const childToParentTimelineMap = {};
 
   let currentTimelineParent = "";
   timelineLinks.forEach((link) => {
@@ -783,6 +777,7 @@ if (caseSections.length && timelineLinks.length) {
 
     if (link.classList.contains("timeline-child")) {
       link.dataset.parent = currentTimelineParent;
+      childToParentTimelineMap[linkTarget] = currentTimelineParent;
       return;
     }
 

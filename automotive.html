@@ -3,8 +3,18 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Automotive UX case study by Petteri Helttula.">
-    <title>Automotive UX - Petteri Helttula</title>
+    <meta name="description" content="Automotive UX case study about redesigning an incoming call interaction for a moving vehicle.">
+    <title>Automotive UX - Incoming Call UI - Petteri Helttula</title>
+    <link rel="canonical" href="https://portfoliobypetu.vercel.app/automotive.html">
+    <meta property="og:title" content="Automotive UX - Incoming Call UI - Petteri Helttula">
+    <meta property="og:description" content="A short automotive UX case about redesigning an incoming call interaction for a moving vehicle.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://portfoliobypetu.vercel.app/automotive.html">
+    <meta property="og:image" content="https://portfoliobypetu.vercel.app/assets/automotive-after.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Automotive UX - Incoming Call UI - Petteri Helttula">
+    <meta name="twitter:description" content="A short automotive UX case about redesigning an incoming call interaction for a moving vehicle.">
+    <meta name="twitter:image" content="https://portfoliobypetu.vercel.app/assets/automotive-after.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
@@ -33,19 +43,26 @@
     <main id="top">
       <section class="case-hero" aria-labelledby="case-title">
         <a class="case-back" href="index.html">Back to projects</a>
-        <p class="eyebrow">Case Study</p>
-        <h1 id="case-title">Automotive UX</h1>
+        <p class="eyebrow">Automotive UX / Safety-Critical Interaction</p>
+        <h1 id="case-title">Did anyone test this while actually driving?</h1>
         <div class="case-facts" id="overview" aria-label="Project overview">
           <div>
             <h2>Overview</h2>
-            <p>An automotive UX case about attention, context, and interfaces that need to work under pressure.</p>
+            <p>A short case study about one incoming call interaction in a Volkswagen T-Cross, likely a 2023 model, and why the UI should change when the car is moving.</p>
+            <p class="case-read-time">
+              <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                <circle cx="8" cy="8" r="6"></circle>
+                <path d="M8 4.8V8l2.3 1.4"></path>
+              </svg>
+              <span>2 min read</span>
+            </p>
           </div>
           <div>
             <h2>My role</h2>
             <div class="case-role-tags" aria-label="Project roles">
-              <span>UX analysis</span>
+              <span>UX research</span>
+              <span>Automotive UI</span>
               <span>Interaction design</span>
-              <span>Product thinking</span>
             </div>
           </div>
           <div>
@@ -53,21 +70,26 @@
             <p>2026</p>
           </div>
         </div>
-        <div class="case-image case-image-placeholder" aria-hidden="true"></div>
+        <figure class="case-section-figure">
+          <button class="case-image-zoom" type="button" aria-label="Open current incoming call UI larger">
+            <img class="case-image" src="assets/automotive-before.png" alt="Volkswagen T-Cross infotainment screen with a small incoming call prompt over the radio interface.">
+          </button>
+          <figcaption>The current interaction uses a small target in the middle of a visually busy infotainment screen.</figcaption>
+        </figure>
         <section class="case-impact" aria-labelledby="takeaways-title">
           <h2 id="takeaways-title">Project Takeaways</h2>
           <div class="impact-grid">
             <article>
               <h3>What I explored</h3>
-              <p>How interfaces should behave when attention is limited, context changes quickly, and interaction cost matters.</p>
+              <p>How a common infotainment interaction changes when the user is driving instead of sitting still.</p>
             </article>
             <article>
               <h3>What I learned</h3>
-              <p>Automotive UX forces the design to prove what is essential. Anything that needs too much attention becomes a risk.</p>
+              <p>The issue was not the touchscreen itself. The issue was a tiny decision target in a moment where precision should not be required.</p>
             </article>
             <article>
-              <h3>What I'd do differently now</h3>
-              <p>I would define driving scenarios earlier and evaluate each interaction against time, attention, and recovery cost.</p>
+              <h3>What I'd do next</h3>
+              <p>I would test the design in motion and compare glance time, reach effort, and how quickly the driver can return attention to the road.</p>
             </article>
           </div>
         </section>
@@ -79,48 +101,52 @@
           <nav>
             <a href="#overview">Overview</a>
             <a class="active" href="#problem-framing">Problem framing</a>
-            <a class="timeline-child" href="#research">Research</a>
-            <a class="timeline-child" href="#analysis">Analysis</a>
-            <a class="timeline-child" href="#interviews">Interviews</a>
-            <a class="timeline-child" href="#findings">Findings</a>
+            <a class="timeline-child" href="#observation">Observation</a>
+            <a class="timeline-child" href="#what-i-ruled-out">What I ruled out</a>
             <a href="#solution">Solution</a>
-            <a href="#final-design">Final design</a>
-            <a href="#results">Results</a>
+            <a href="#reflection">Reflection</a>
           </nav>
         </aside>
 
         <article class="case-content">
           <section class="case-section" id="problem-framing">
             <h2>Problem framing</h2>
-            <p>A short framing of the user problem, product context, and why this project mattered will live here.</p>
+            <p>Car infotainment systems often inherit mobile UI patterns without fully adapting them to the driving context. That becomes a problem when the driver needs to make a quick decision while the vehicle is moving.</p>
+            <p>This case focuses on one small interaction: an incoming phone call on the center console screen. The car was a Volkswagen T-Cross, likely around the 2023 model year.</p>
+            <div class="case-callout">
+              <p><strong>Design question:</strong> if the system knows the vehicle is moving, why does the call UI still ask for precise tapping?</p>
+            </div>
           </section>
-          <section class="case-section case-subsection" id="research">
-            <h3>Research</h3>
-            <p>Placeholder for inputs, desk research, product exploration, or early discovery notes.</p>
+          <section class="case-section case-subsection" id="observation">
+            <h3>Observation</h3>
+            <p>I noticed the issue as a passenger when my father's phone rang. The phone was connected through Bluetooth, so the call appeared on the infotainment screen.</p>
+            <p>To answer or decline, he had to reach forward and hit a small button accurately while driving. He managed it, but the interaction made the wrong thing difficult: not the decision, but the physical precision required to execute it.</p>
           </section>
-          <section class="case-section case-subsection" id="analysis">
-            <h3>Analysis</h3>
-            <p>Placeholder for patterns, constraints, tradeoffs, and the thinking that shaped the direction.</p>
-          </section>
-          <section class="case-section case-subsection" id="interviews">
-            <h3>Interviews</h3>
-            <p>Placeholder for user or stakeholder conversations when those details are ready.</p>
-          </section>
-          <section class="case-section case-subsection" id="findings">
-            <h3>Findings</h3>
-            <p>Placeholder for the core insights that the design needed to respond to.</p>
+          <section class="case-section case-subsection" id="what-i-ruled-out">
+            <h3>What I ruled out</h3>
+            <p>Voice commands are the obvious answer, but not a complete one. They can fail in noisy environments, require the driver to remember the right phrasing, and still create cognitive load.</p>
+            <p>Removing touchscreens entirely is not a practical near-term answer either. These systems are already in cars. The better question is how the UI should adapt when the driving context changes.</p>
           </section>
           <section class="case-section" id="solution">
             <h2>Solution</h2>
-            <p>Placeholder for the concept, key flows, and design decisions.</p>
+            <p>When a call arrives and the vehicle is moving, the call UI should take over the main attention area. The caller should be easier to identify, and accept or decline should become large, low-precision targets.</p>
+            <p>The navigation or media context does not need to disappear completely. It can shrink into a secondary strip while the call is active, then return to the previous layout after the call is answered, declined, or missed.</p>
+            <figure class="case-section-figure">
+              <button class="case-image-zoom" type="button" aria-label="Open proposed incoming call UI larger">
+                <img src="assets/automotive-after.png" alt="Proposed Volkswagen T-Cross incoming call interface with a larger caller area and larger accept and decline buttons.">
+              </button>
+              <figcaption>The proposed version gives the call the priority it needs and makes the action targets easier to hit while driving.</figcaption>
+            </figure>
+            <ul>
+              <li><strong>Larger caller area:</strong> the driver can identify the call with a shorter glance.</li>
+              <li><strong>Larger accept and decline targets:</strong> less precision is required while reaching forward.</li>
+              <li><strong>Context-aware priority:</strong> the UI changes only when the vehicle is moving and the call needs a decision.</li>
+            </ul>
           </section>
-          <section class="case-section" id="final-design">
-            <h2>Final design</h2>
-            <p>Placeholder for final screens, interaction details, and visual system notes.</p>
-          </section>
-          <section class="case-section" id="results">
-            <h2>Results</h2>
-            <p>Placeholder for outcomes, learning, metrics, or reflection.</p>
+          <section class="case-section" id="reflection">
+            <h2>Reflection</h2>
+            <p>Not every design issue needs to wait for a worst-case outcome before it gets fixed. This one is not technically complex. It requires the product team to treat an incoming call while driving as a different context from an incoming call while parked.</p>
+            <p>The how is straightforward: reduce precision, increase hierarchy, and help the driver return attention to the road faster. The harder part is deciding that this moment deserves priority.</p>
           </section>
         </article>
       </div>

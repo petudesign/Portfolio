@@ -3,8 +3,18 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="FilterNews case study by Petteri Helttula.">
+    <meta name="description" content="FilterNews case study: a Chrome Extension that helps users soften unwanted news topics without fully disconnecting from the news.">
     <title>FilterNews - Petteri Helttula</title>
+    <link rel="canonical" href="https://portfoliobypetu.vercel.app/filter-news.html">
+    <meta property="og:title" content="FilterNews - Petteri Helttula">
+    <meta property="og:description" content="A Chrome Extension that helps users soften unwanted news topics without fully disconnecting from the news.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://portfoliobypetu.vercel.app/filter-news.html">
+    <meta property="og:image" content="https://portfoliobypetu.vercel.app/assets/filternews-bbc.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FilterNews - Petteri Helttula">
+    <meta name="twitter:description" content="A Chrome Extension that helps users soften unwanted news topics without fully disconnecting from the news.">
+    <meta name="twitter:image" content="https://portfoliobypetu.vercel.app/assets/filternews-bbc.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
@@ -33,12 +43,12 @@
     <main id="top">
       <section class="case-hero" aria-labelledby="case-title">
         <a class="case-back" href="index.html">Back to projects</a>
-        <p class="eyebrow">Case Study</p>
+        <p class="eyebrow">Chrome Extension / Product Design</p>
         <h1 id="case-title">FilterNews</h1>
         <div class="case-facts" id="overview" aria-label="Project overview">
           <div>
             <h2>Overview</h2>
-            <p>A news-consumption case about reducing overload and helping people find a calmer information rhythm.</p>
+            <p>A Chrome Extension that helps users soften unwanted news topics without fully disconnecting from the news.</p>
             <p class="case-read-time">
               <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
                 <circle cx="8" cy="8" r="6"></circle>
@@ -65,7 +75,7 @@
           <video
             class="case-video"
             src="assets/filter-news-preview.mp4"
-            poster="assets/filter-news.png"
+            poster="assets/filternews-bbc.png"
             autoplay
             muted
             loop
@@ -82,15 +92,15 @@
           <div class="impact-grid">
             <article>
               <h3>What I explored</h3>
-              <p>How news consumption could feel less overwhelming by giving people stronger filters, pacing, and hierarchy.</p>
+              <p>How to give users temporary control over repeated exposure to heavy topics without turning the product into a censorship or avoidance tool.</p>
             </article>
             <article>
               <h3>What I learned</h3>
-              <p>Reducing cognitive load is not only about removing content. It is also about better defaults and clearer decision points.</p>
+              <p>Filtering is a trust problem as much as a technical one. Users need to know what was softened, why it happened, and how to reveal it.</p>
             </article>
             <article>
               <h3>What I'd do differently now</h3>
-              <p>I would prototype the filtering model earlier and test whether people understand what gets hidden, prioritised, or delayed.</p>
+              <p>I would test the smallest meaningful blur target earlier, because filtering one keyword can accidentally hide much more content than intended.</p>
             </article>
           </div>
         </section>
@@ -102,48 +112,108 @@
           <nav>
             <a href="#overview">Overview</a>
             <a class="active" href="#problem-framing">Problem framing</a>
-            <a class="timeline-child" href="#research">Research</a>
-            <a class="timeline-child" href="#analysis">Analysis</a>
-            <a class="timeline-child" href="#interviews">Interviews</a>
-            <a class="timeline-child" href="#findings">Findings</a>
+            <a class="timeline-child" href="#psychology">Why this matters</a>
             <a href="#solution">Solution</a>
-            <a href="#final-design">Final design</a>
-            <a href="#results">Results</a>
+            <a href="#features">Key features</a>
+            <a href="#design-challenges">Design challenges</a>
+            <a class="timeline-child" href="#false-positives">False positives</a>
+            <a class="timeline-child" href="#over-filtering">Over-filtering</a>
+            <a class="timeline-child" href="#repetition">Repetition</a>
+            <a href="#delight">Cat Mode</a>
+            <a href="#reflection">Reflection</a>
           </nav>
         </aside>
 
         <article class="case-content">
           <section class="case-section" id="problem-framing">
             <h2>Problem framing</h2>
-            <p>A short framing of the user problem, product context, and why this project mattered will live here.</p>
+            <p>News browsing can become emotionally repetitive. A user may want to stay informed, but not repeatedly process the same heavy topics across headlines, sidebars, most-read lists, and recommendations.</p>
+            <p>The problem was not that news sites show difficult content. The problem was the lack of moment-to-moment control. Sometimes the user does not need a permanent block. They need a softer boundary: <strong>not right now</strong>.</p>
+            <div class="case-callout">
+              <p><strong>Product principle:</strong> FilterNews should reduce repeated exposure without hiding the fact that something was filtered. Relief should not come at the cost of control or awareness.</p>
+            </div>
           </section>
-          <section class="case-section case-subsection" id="research">
-            <h3>Research</h3>
-            <p>Placeholder for inputs, desk research, product exploration, or early discovery notes.</p>
-          </section>
-          <section class="case-section case-subsection" id="analysis">
-            <h3>Analysis</h3>
-            <p>Placeholder for patterns, constraints, tradeoffs, and the thinking that shaped the direction.</p>
-          </section>
-          <section class="case-section case-subsection" id="interviews">
-            <h3>Interviews</h3>
-            <p>Placeholder for user or stakeholder conversations when those details are ready.</p>
-          </section>
-          <section class="case-section case-subsection" id="findings">
-            <h3>Findings</h3>
-            <p>Placeholder for the core insights that the design needed to respond to.</p>
+          <section class="case-section case-subsection" id="psychology">
+            <h3>Why this matters</h3>
+            <p>The design sits close to cognitive load and emotional regulation. When the same kind of stressful topic appears repeatedly, the cost is not only reading one article. It is scanning, interpreting, reacting, and deciding whether to keep going.</p>
+            <p>FilterNews gives the user perceived control over that exposure. The important part is practical: the user can soften a topic, see the reason, reveal the content, and decide whether the filter should apply only on specific sites or only for a limited time.</p>
           </section>
           <section class="case-section" id="solution">
             <h2>Solution</h2>
-            <p>Placeholder for the concept, key flows, and design decisions.</p>
+            <p>FilterNews uses soft filtering instead of deletion. Matching content is blurred or dimmed, a small label explains why it was filtered, and the user can reveal it when they choose.</p>
+            <p>This keeps the experience honest. The product is not pretending the news disappeared. It is helping the user decide whether now is the right moment to engage with it.</p>
+            <figure class="case-section-figure">
+              <button class="case-image-zoom" type="button" aria-label="Open FilterNews interface preview larger">
+                <img src="assets/filternews-bbc.png" alt="BBC news page where several article cards are softened by FilterNews with visible filter reason labels.">
+              </button>
+              <figcaption>This was important to test beyond one Finnish news site: the same soft filtering model also works on other news layouts.</figcaption>
+            </figure>
           </section>
-          <section class="case-section" id="final-design">
-            <h2>Final design</h2>
-            <p>Placeholder for final screens, interaction details, and visual system notes.</p>
+          <section class="case-section" id="features">
+            <h2>Key features</h2>
+            <figure class="case-section-figure case-section-figure-narrow">
+              <button class="case-image-zoom" type="button" aria-label="Open FilterNews controls screenshot larger">
+                <img src="assets/filternews-filtteri.png" alt="FilterNews controls showing topic filters, custom keyword chips, and site-specific filtering options.">
+              </button>
+              <figcaption>The controls separate topic filters, custom words, and site-specific rules so the user can tune the filter without making the setup feel heavy.</figcaption>
+            </figure>
+            <ul>
+              <li><strong>Topic filters:</strong> war and conflicts, violence, accidents, crime, and politics.</li>
+              <li><strong>Custom words:</strong> user-defined keywords for topics they want to soften temporarily.</li>
+              <li><strong>Soft filtering:</strong> blur or dim content instead of removing it from the page.</li>
+              <li><strong>Reveal option:</strong> filtered items can still be opened when the user wants to see them.</li>
+              <li><strong>Site-specific rules:</strong> filtering can apply only on selected news sites.</li>
+              <li><strong>Timer:</strong> filtering is off by default, but the user can enable it for a set period. After the timer ends, FilterNews stops filtering automatically.</li>
+              <li><strong>Cat Mode:</strong> a playful opt-in mode that replaces softened content with cat images instead of blur.</li>
+            </ul>
+            <div class="case-callout">
+              <p><strong>Feature hierarchy:</strong> the timer supports the main product promise: temporary control. Cat Mode is intentionally lighter. It adds personality, but it should not carry the value proposition.</p>
+            </div>
           </section>
-          <section class="case-section" id="results">
-            <h2>Results</h2>
-            <p>Placeholder for outcomes, learning, metrics, or reflection.</p>
+          <section class="case-section" id="design-challenges">
+            <h2>Design challenges</h2>
+            <p>The hardest part was not detecting words. The harder design problem was deciding what should happen when the filter is wrong, too broad, or surprisingly effective.</p>
+          </section>
+          <section class="case-section case-subsection" id="false-positives">
+            <h3>False positives</h3>
+            <p>A keyword can misunderstand context. In one test, the word "accident" appeared in a banner telling readers to send photos or news tips and to call 112 first in an emergency. The filter detected the word and blurred the banner, even though it was not an accident article.</p>
+            <p>That made the trust issue obvious: the user needs to know why something was filtered, and they need an easy way to reveal it. Without transparency, the product starts to feel arbitrary.</p>
+            <figure class="case-section-figure case-section-figure-narrow">
+              <button class="case-image-zoom" type="button" aria-label="Open false positive screenshot larger">
+                <img src="assets/filternews-falseflag.png" alt="News tip banner containing an emergency accident instruction that could be incorrectly matched by a keyword filter.">
+              </button>
+              <figcaption>A false positive: the word "accident" appears in useful safety copy, not in an accident article.</figcaption>
+            </figure>
+          </section>
+          <section class="case-section case-subsection" id="over-filtering">
+            <h3>Over-filtering</h3>
+            <p>If a filtered word appears inside a large page section, the extension can accidentally blur the whole section even when only one headline matched. That makes the product feel heavier than the content it is trying to soften.</p>
+            <p>The design implication is simple: the filter should target the smallest meaningful unit. On a news site, that usually means an article card, headline row, sidebar item, or recommendation block.</p>
+          </section>
+          <section class="case-section case-subsection" id="repetition">
+            <h3>Repetition</h3>
+            <p>With only a few custom words active, a surprisingly large part of the news homepage became filtered. That was the strongest product signal in the project.</p>
+            <p>Emotional overload is often caused by repeated exposure, not one single article. The same topic can appear in the main story, a sidebar, a most-read list, and several recommendation blocks. FilterNews is useful because it works across that repetition.</p>
+            <figure class="case-section-figure">
+              <button class="case-image-zoom" type="button" aria-label="Open repeated exposure screenshot larger">
+                <img src="assets/filternews-why.png" alt="Ilta-Sanomat homepage where a small set of custom keyword filters softens multiple repeated news items across the page.">
+              </button>
+              <figcaption>With only a few custom words active, the filter affected the main story, side lists, and repeated recommendation areas.</figcaption>
+            </figure>
+            <div class="case-callout">
+              <p><strong>Learning:</strong> a small number of filters can make a large difference when the page repeats the same topics in many places.</p>
+            </div>
+          </section>
+          <section class="case-section" id="delight">
+            <h2>Delight without changing the core product</h2>
+            <p>Cat Mode is a deliberately small opt-in layer. If the user turns it on, filtered areas can be replaced with calm cat images instead of blurred content.</p>
+            <p>I would frame it as a playful escape hatch, not a serious coping feature. Most users probably would not keep it on every day, and that is fine. Its job is to make the product feel less clinical while keeping the default experience quiet and useful.</p>
+          </section>
+          <section class="case-section" id="reflection">
+            <h2>Reflection</h2>
+            <p>This project taught me that filtering is not only a technical problem. It is also a trust problem.</p>
+            <p>If the filter hides too much, it feels restrictive. If it hides too little, it does not help. The core design principle is to keep the user in control: explain the reason, keep the content recoverable, and let filtering be temporary or site-specific.</p>
+            <p>The product direction I would keep is the softer framing. FilterNews should not promise to remove reality from the internet. It should help people stay informed without being forced to repeatedly process topics they do not have capacity for right now.</p>
           </section>
         </article>
       </div>
