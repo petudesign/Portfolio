@@ -6,6 +6,7 @@
     <meta name="description" content="FilterNews case study: a Chrome Extension that helps users soften unwanted news topics without fully disconnecting from the news.">
     <title>FilterNews - Petteri Helttula</title>
     <link rel="canonical" href="https://portfoliobypetu.vercel.app/filter-news.html">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <meta property="og:title" content="FilterNews - Petteri Helttula">
     <meta property="og:description" content="A Chrome Extension that helps users soften unwanted news topics without fully disconnecting from the news.">
     <meta property="og:type" content="article">
@@ -35,7 +36,7 @@
         <a class="active" href="index.html#projects">Projects</a>
         <a href="about.html">About</a>
         <a href="blog.html">Blog</a>
-        <a href="https://drive.google.com/file/d/15QaOzodCL-Q-qqauEE26SKPag7V5eBde/view" target="_blank" rel="noopener noreferrer">Resume</a>
+        <a href="https://drive.google.com/file/d/1jGHfK2btH744Slry8skZ1yfMZMGNYg3_/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
         <a class="linkedin" href="https://www.linkedin.com/in/petteri-helttula/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
       </nav>
     </header>
@@ -144,7 +145,7 @@
             <p>This keeps the experience honest. The product is not pretending the news disappeared. It is helping the user decide whether now is the right moment to engage with it.</p>
             <figure class="case-section-figure">
               <button class="case-image-zoom" type="button" aria-label="Open FilterNews interface preview larger">
-                <img src="assets/filternews-bbc.png" alt="BBC news page where several article cards are softened by FilterNews with visible filter reason labels.">
+                <img src="assets/filternews-bbc.png" alt="BBC news page where several article cards are softened by FilterNews with visible filter reason labels." decoding="async" loading="lazy">
               </button>
               <figcaption>This was important to test beyond one Finnish news site: the same soft filtering model also works on other news layouts.</figcaption>
             </figure>
@@ -153,7 +154,7 @@
             <h2>Key features</h2>
             <figure class="case-section-figure case-section-figure-narrow">
               <button class="case-image-zoom" type="button" aria-label="Open FilterNews controls screenshot larger">
-                <img src="assets/filternews-filtteri.png" alt="FilterNews controls showing topic filters, custom keyword chips, and site-specific filtering options.">
+                <img src="assets/filternews-filtteri.png" alt="FilterNews controls showing topic filters, custom keyword chips, and site-specific filtering options." decoding="async" loading="lazy">
               </button>
               <figcaption>The controls separate topic filters, custom words, and site-specific rules so the user can tune the filter without making the setup feel heavy.</figcaption>
             </figure>
@@ -180,7 +181,7 @@
             <p>That made the trust issue obvious: the user needs to know why something was filtered, and they need an easy way to reveal it. Without transparency, the product starts to feel arbitrary.</p>
             <figure class="case-section-figure case-section-figure-narrow">
               <button class="case-image-zoom" type="button" aria-label="Open false positive screenshot larger">
-                <img src="assets/filternews-falseflag.png" alt="News tip banner containing an emergency accident instruction that could be incorrectly matched by a keyword filter.">
+                <img src="assets/filternews-falseflag.png" alt="News tip banner containing an emergency accident instruction that could be incorrectly matched by a keyword filter." decoding="async" loading="lazy">
               </button>
               <figcaption>A false positive: the word "accident" appears in useful safety copy, not in an accident article.</figcaption>
             </figure>
@@ -196,7 +197,7 @@
             <p>Emotional overload is often caused by repeated exposure, not one single article. The same topic can appear in the main story, a sidebar, a most-read list, and several recommendation blocks. FilterNews is useful because it works across that repetition.</p>
             <figure class="case-section-figure">
               <button class="case-image-zoom" type="button" aria-label="Open repeated exposure screenshot larger">
-                <img src="assets/filternews-why.png" alt="Ilta-Sanomat homepage where a small set of custom keyword filters softens multiple repeated news items across the page.">
+                <img src="assets/filternews-why.png" alt="Ilta-Sanomat homepage where a small set of custom keyword filters softens multiple repeated news items across the page." decoding="async" loading="lazy">
               </button>
               <figcaption>With only a few custom words active, the filter affected the main story, side lists, and repeated recommendation areas.</figcaption>
             </figure>
@@ -224,6 +225,6 @@
       <a class="back-to-top" href="#top">Back to top</a>
     </footer>
 
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
   </body>
 </html>

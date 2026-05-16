@@ -1,43 +1,3 @@
-@font-face {
-  font-family: "SF Pro Display";
-  src: url("assets/fonts/SF-Pro-Display-Regular.otf") format("opentype");
-  font-display: block;
-  font-style: normal;
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "SF Pro Display";
-  src: url("assets/fonts/SF-Pro-Display-Light.otf") format("opentype");
-  font-display: block;
-  font-style: normal;
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: "SF Pro Display";
-  src: url("assets/fonts/SF-Pro-Display-Medium.otf") format("opentype");
-  font-display: block;
-  font-style: normal;
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: "SF Pro Display";
-  src: url("assets/fonts/SF-Pro-Display-Semibold.otf") format("opentype");
-  font-display: block;
-  font-style: normal;
-  font-weight: 600;
-}
-
-@font-face {
-  font-family: "SF Pro Display";
-  src: url("assets/fonts/SF-Pro-Display-Bold.otf") format("opentype");
-  font-display: block;
-  font-style: normal;
-  font-weight: 700;
-}
-
 :root {
   --bg: #f8f8f8;
   --surface: #fbfbfb;
@@ -51,7 +11,7 @@
   --pink: #dc1b9a;
   --page-x: clamp(24px, 7.25vw, 140px);
   --shadow: 0 26px 68px rgba(23, 23, 23, 0.12);
-  --font-sans: "SF Pro Display", "SF Pro Text", "Geist", "Geist Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sans: "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", "Helvetica Neue", Arial, sans-serif;
   font-family: var(--font-sans);
 }
 
@@ -707,12 +667,19 @@ h1 em {
 
 .automotive-preview {
   grid-area: 1 / 1;
+  display: block;
   width: min(88%, 960px) !important;
   height: auto !important;
   max-height: 100%;
   border-radius: 6px;
   box-shadow: 0 18px 46px rgba(23, 23, 23, 0.1);
   object-fit: contain !important;
+}
+
+.project-media-automotive picture img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .automotive-preview-after {

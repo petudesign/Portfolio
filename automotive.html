@@ -6,6 +6,7 @@
     <meta name="description" content="Automotive UX case study about redesigning an incoming call interaction for a moving vehicle.">
     <title>Automotive UX - Incoming Call UI - Petteri Helttula</title>
     <link rel="canonical" href="https://portfoliobypetu.vercel.app/automotive.html">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <meta property="og:title" content="Automotive UX - Incoming Call UI - Petteri Helttula">
     <meta property="og:description" content="A short automotive UX case about redesigning an incoming call interaction for a moving vehicle.">
     <meta property="og:type" content="article">
@@ -35,7 +36,7 @@
         <a class="active" href="index.html#projects">Projects</a>
         <a href="about.html">About</a>
         <a href="blog.html">Blog</a>
-        <a href="https://drive.google.com/file/d/15QaOzodCL-Q-qqauEE26SKPag7V5eBde/view" target="_blank" rel="noopener noreferrer">Resume</a>
+        <a href="https://drive.google.com/file/d/1jGHfK2btH744Slry8skZ1yfMZMGNYg3_/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
         <a class="linkedin" href="https://www.linkedin.com/in/petteri-helttula/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
       </nav>
     </header>
@@ -72,7 +73,10 @@
         </div>
         <figure class="case-section-figure">
           <button class="case-image-zoom" type="button" aria-label="Open current incoming call UI larger">
-            <img class="case-image" src="assets/automotive-before.png" alt="Volkswagen T-Cross infotainment screen with a small incoming call prompt over the radio interface.">
+            <picture>
+              <source srcset="assets/automotive-before.avif" type="image/avif">
+              <img class="case-image" src="assets/automotive-before.png" alt="Volkswagen T-Cross infotainment screen with a small incoming call prompt over the radio interface." decoding="async" fetchpriority="high">
+            </picture>
           </button>
           <figcaption>The current interaction uses a small target in the middle of a visually busy infotainment screen.</figcaption>
         </figure>
@@ -133,7 +137,10 @@
             <p>The navigation or media context does not need to disappear completely. It can shrink into a secondary strip while the call is active, then return to the previous layout after the call is answered, declined, or missed.</p>
             <figure class="case-section-figure">
               <button class="case-image-zoom" type="button" aria-label="Open proposed incoming call UI larger">
-                <img src="assets/automotive-after.png" alt="Proposed Volkswagen T-Cross incoming call interface with a larger caller area and larger accept and decline buttons.">
+                <picture>
+                  <source srcset="assets/automotive-after.webp" type="image/webp">
+                  <img src="assets/automotive-after.png" alt="Proposed Volkswagen T-Cross incoming call interface with a larger caller area and larger accept and decline buttons." decoding="async" loading="lazy">
+                </picture>
               </button>
               <figcaption>The proposed version gives the call the priority it needs and makes the action targets easier to hit while driving.</figcaption>
             </figure>
@@ -157,6 +164,6 @@
       <a class="back-to-top" href="#top">Back to top</a>
     </footer>
 
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
   </body>
 </html>

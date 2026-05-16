@@ -6,6 +6,7 @@
     <meta name="description" content="Petteri Helttula's product design portfolio: UX case studies, interface design work, and AI-assisted product experiments.">
     <title>Petteri Helttula - Product Design Portfolio</title>
     <link rel="canonical" href="https://portfoliobypetu.vercel.app/">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <meta property="og:title" content="Petteri Helttula - Product Design Portfolio">
     <meta property="og:description" content="UX case studies, interface design work, and AI-assisted product experiments by Petteri Helttula.">
     <meta property="og:type" content="website">
@@ -54,7 +55,7 @@
         <a class="active" href="#projects">Projects</a>
         <a href="about.html">About</a>
         <a href="blog.html">Blog</a>
-        <a href="https://drive.google.com/file/d/15QaOzodCL-Q-qqauEE26SKPag7V5eBde/view" target="_blank" rel="noopener noreferrer">Resume</a>
+        <a href="https://drive.google.com/file/d/1jGHfK2btH744Slry8skZ1yfMZMGNYg3_/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
         <a class="linkedin" href="https://www.linkedin.com/in/petteri-helttula/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
       </nav>
     </header>
@@ -88,7 +89,7 @@
         <aside class="featured" aria-label="Featured project preview">
           <p class="eyebrow">Selected Projects</p>
           <a class="featured-image media-preview media-preview-shavikki" href="shavikki.html" aria-label="Open S-Hävikki case study">
-            <img src="assets/shavikki-kaappikuva.png" alt="S-Hävikki branded food waste cabinet concept in a grocery store">
+            <img src="assets/shavikki-kaappikuva.png" alt="S-Hävikki branded food waste cabinet concept in a grocery store" decoding="async" fetchpriority="high">
             <span class="case-card-tools" aria-label="Case includes 6 minute read">
               <span class="case-card-tool">
                 <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
@@ -101,7 +102,7 @@
           </a>
           <div class="selected-grid">
             <a class="media-preview media-preview-savings" href="savings.html" aria-label="Open savings app case">
-              <img src="assets/savings-app.png" alt="Savings app interface preview">
+              <img src="assets/savings-app.png" alt="Savings app interface preview" decoding="async">
               <span class="case-card-tools" aria-label="Case includes 4 minute read">
                 <span class="case-card-tool">
                   <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
@@ -113,7 +114,7 @@
               </span>
             </a>
             <a class="media-preview media-preview-dashboard" href="dashboard.html" aria-label="Open dashboard case">
-              <img src="assets/dashboard.png" alt="Project dashboard interface preview">
+              <img src="assets/dashboard.png" alt="Project dashboard interface preview" decoding="async">
               <span class="case-card-tools" aria-label="Case includes 3 minute read">
                 <span class="case-card-tool">
                   <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
@@ -146,7 +147,7 @@
                 playsinline
                 preload="auto"
               ></video>
-              <img class="mobile-preview-image" src="assets/filternews-bbc.png" alt="" aria-hidden="true">
+              <img class="mobile-preview-image" src="assets/filternews-bbc.png" alt="" aria-hidden="true" decoding="async" loading="lazy">
               <span class="case-card-tools" aria-label="Case includes 5 minute read and prototype">
                 <span class="case-card-tool">
                   <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
@@ -182,7 +183,7 @@
                 playsinline
                 preload="auto"
               ></video>
-              <img class="mobile-preview-image" src="assets/elisa-final-design.png" alt="" aria-hidden="true">
+              <img class="mobile-preview-image" src="assets/elisa-final-design.png" alt="" aria-hidden="true" decoding="async" loading="lazy">
               <span class="case-card-tools" aria-label="Case includes 5 minute read and UX audit">
                 <span class="case-card-tool">
                   <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
@@ -212,8 +213,14 @@
 
           <article class="project-card" id="automotive">
             <a class="project-media project-media-automotive" href="automotive.html" aria-label="Automotive UX case">
-              <img class="automotive-preview automotive-preview-before" src="assets/automotive-before.png" alt="Volkswagen T-Cross infotainment screen with a small incoming call prompt">
-              <img class="automotive-preview automotive-preview-after" src="assets/automotive-after.png" alt="" aria-hidden="true">
+              <picture class="automotive-preview automotive-preview-before">
+                <source srcset="assets/automotive-before.avif" type="image/avif">
+                <img src="assets/automotive-before.png" alt="Volkswagen T-Cross infotainment screen with a small incoming call prompt" decoding="async" loading="lazy">
+              </picture>
+              <picture class="automotive-preview automotive-preview-after">
+                <source srcset="assets/automotive-after.webp" type="image/webp">
+                <img src="assets/automotive-after.png" alt="" aria-hidden="true" decoding="async" loading="lazy">
+              </picture>
               <span class="case-card-tools" aria-label="Case includes 2 minute read and mini case">
                 <span class="case-card-tool">
                   <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
@@ -301,6 +308,6 @@
       </div>
     </section>
 
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
   </body>
 </html>
