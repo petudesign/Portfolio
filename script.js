@@ -188,6 +188,37 @@ const companionContent = {
       },
     ],
   },
+  "project-flowmark": {
+    intro:
+      "This companion is tuned for the Flowmark concept, with questions around lightweight prototype testing and keeping validation tools focused.",
+    prompts: [
+      {
+        label: "Give me the 30-second version",
+        answer:
+          "Flowmark is an early concept for a lightweight internal prototype testing platform. The point is not to replace a full research suite, but to make quick mobile tests easier with task links, first-click data, heat maps, success metrics, and concise AI-assisted UX insights.",
+      },
+      {
+        label: "What is this project about?",
+        answer:
+          "It explores how a team could validate mobile prototype flows without depending on paid third-party subscriptions for every small test.",
+      },
+      {
+        label: "What should I look for?",
+        answer:
+          "Look for scope control. The strongest product decision is keeping the MVP narrow: create a task, share the test, capture behavior, and read the result quickly.",
+      },
+      {
+        label: "What is the main risk?",
+        answer:
+          "False confidence. Small-sample test data and AI summaries can look more certain than they are, so the product needs to show context and uncertainty clearly.",
+      },
+      {
+        label: "What would he test first?",
+        answer:
+          "Whether the lightweight setup actually makes teams test prototypes more often. If it does not change behavior, the product should stay as a learning artifact.",
+      },
+    ],
+  },
   "project-filter-news": {
     intro:
       "This companion is tuned for the FilterNews case, with questions around cognitive load, reading behavior, and healthier information flow.",
@@ -296,6 +327,37 @@ const companionContent = {
       },
     ],
   },
+  "project-courttap": {
+    intro:
+      "This companion is tuned for the CourtTap smartwatch scoring concept, with questions around live sports scoring, glanceability, and MVP scope.",
+    prompts: [
+      {
+        label: "Give me the 30-second version",
+        answer:
+          "CourtTap is a tennis and padel scoring concept for smartwatches. The focus is live scoring during a match: one-tap point entry, undo, set progress, server state, and tie-break handling without pulling out a phone.",
+      },
+      {
+        label: "What is this project about?",
+        answer:
+          "A wearable UX concept for players who need to keep score quickly while their attention stays on the court.",
+      },
+      {
+        label: "What should I look for?",
+        answer:
+          "Look for large targets, fast correction, short labels, and whether the interface avoids asking the player to study the watch between points.",
+      },
+      {
+        label: "What is the MVP?",
+        answer:
+          "Live scoring only: add point for either side, undo, current server, set state, tie-breaks, and match finished. Stats and social features should wait.",
+      },
+      {
+        label: "What would he test first?",
+        answer:
+          "Whether players can use it during a real rally session without breaking match rhythm. Desk testing is not enough for this concept.",
+      },
+    ],
+  },
   "project-smartgrocer": {
     intro:
       "This companion is tuned for the SmartGrocer case, with questions around planning, habits, and reducing household admin.",
@@ -358,22 +420,13 @@ const caseStudies = [
     description: "Reducing grocery food waste through a branded cabinet, employee workflow, and customer-facing concept.",
   },
   {
-    id: "project-savings",
-    title: "Savings App",
-    meta: "Financial UX",
+    id: "project-flowmark",
+    title: "Flowmark",
+    meta: "Prototype testing",
     year: "2026",
-    href: "savings.html",
-    image: "assets/savings-app.png",
-    description: "Making savings progress feel clearer, calmer, and easier to act on.",
-  },
-  {
-    id: "project-dashboard",
-    title: "Dashboard",
-    meta: "Product systems",
-    year: "2026",
-    href: "dashboard.html",
-    image: "assets/dashboard.png",
-    description: "Turning dense operational information into a surface people can scan and use.",
+    href: "flowmark.html",
+    image: "assets/flowmark-preview.svg",
+    description: "A lightweight internal-use platform concept for mobile prototype testing and UX insight summaries.",
   },
   {
     id: "project-filter-news",
@@ -400,6 +453,15 @@ const caseStudies = [
     year: "2026",
     href: "automotive.html",
     description: "Looking at attention, safety, and interface decisions in a driving context.",
+  },
+  {
+    id: "project-courttap",
+    title: "CourtTap",
+    meta: "Wearable UX",
+    year: "2026",
+    href: "courttap.html",
+    image: "assets/courttap-preview.svg",
+    description: "A smartwatch scoring concept for tennis and padel matches.",
   },
   {
     id: "project-smartgrocer",
@@ -562,7 +624,7 @@ const caseVideoToggles = document.querySelectorAll(".case-video-toggle");
 const caseImageZoomButtons = document.querySelectorAll(".case-image-zoom");
 
 hoverPreviewVideos.forEach((video) => {
-  const previewCard = video.closest(".project-media");
+  const previewCard = video.closest(".project-media, .media-preview");
 
   video.addEventListener("loadedmetadata", () => {
     video.currentTime = 0.01;

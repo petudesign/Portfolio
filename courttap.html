@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CourtTap concept case study: a tennis and padel scoring app for smartwatches.">
+    <title>CourtTap - Petteri Helttula</title>
+    <link rel="canonical" href="https://portfoliobypetu.vercel.app/courttap.html">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <meta property="og:title" content="CourtTap - Petteri Helttula">
+    <meta property="og:description" content="A smartwatch scoring concept for tennis and padel matches.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://portfoliobypetu.vercel.app/courttap.html">
+    <meta property="og:image" content="https://portfoliobypetu.vercel.app/assets/courttap-preview.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CourtTap - Petteri Helttula">
+    <meta name="twitter:description" content="A smartwatch scoring concept for tennis and padel matches.">
+    <meta name="twitter:image" content="https://portfoliobypetu.vercel.app/assets/courttap-preview.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="/_vercel/insights/script.js"></script>
+  </head>
+  <body data-page="project-courttap">
+    <header class="site-header">
+      <div class="brand">
+        <a class="top-link" href="index.html" aria-label="Back to home">Petteri Helttula</a>
+        <span>Design &amp; Code</span>
+      </div>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <a class="active" href="index.html#projects">Projects</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="https://drive.google.com/file/d/1jGHfK2btH744Slry8skZ1yfMZMGNYg3_/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
+        <a class="linkedin" href="https://www.linkedin.com/in/petteri-helttula/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="case-hero" aria-labelledby="case-title">
+        <a class="case-back" href="index.html">Back to projects</a>
+        <p class="eyebrow">Product Concept</p>
+        <h1 id="case-title">CourtTap</h1>
+        <div class="case-facts" id="overview" aria-label="Project overview">
+          <div>
+            <h2>Overview</h2>
+            <p>A tennis and padel scoring concept for smartwatches, focused on recording points quickly during a match without pulling out a phone.</p>
+          </div>
+          <div>
+            <h2>My role</h2>
+            <div class="case-role-tags" aria-label="Project roles">
+              <span>Product design</span>
+              <span>Interaction design</span>
+              <span>MVP scoping</span>
+              <span>Wearable UX</span>
+            </div>
+          </div>
+          <div>
+            <h2>Status</h2>
+            <p>Concept exploration</p>
+          </div>
+        </div>
+        <img class="case-image" src="assets/courttap-preview.svg" alt="CourtTap smartwatch scoring interface concept" decoding="async" fetchpriority="high">
+        <section class="case-impact" aria-labelledby="takeaways-title">
+          <h2 id="takeaways-title">Project Takeaways</h2>
+          <div class="impact-grid">
+            <article>
+              <h3>What is strong</h3>
+              <p>The use case is concrete: players need a fast, glanceable way to track scoring while attention stays on the court.</p>
+            </article>
+            <article>
+              <h3>What to keep small</h3>
+              <p>The MVP should avoid social features, ranking, and heavy stats until the scoring interaction is proven reliable.</p>
+            </article>
+            <article>
+              <h3>What to test first</h3>
+              <p>Can players add points, undo mistakes, and understand match state while moving, sweating, and only glancing at the watch?</p>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <div class="case-layout">
+        <aside class="case-timeline" aria-label="On this page">
+          <p>On this page</p>
+          <nav>
+            <a href="#overview">Overview</a>
+            <a class="active" href="#problem-framing">Problem framing</a>
+            <a href="#mvp">MVP scope</a>
+            <a href="#interaction">Interaction rules</a>
+            <a href="#next">Next step</a>
+          </nav>
+        </aside>
+
+        <article class="case-content">
+          <section class="case-section" id="problem-framing">
+            <h2>Problem framing</h2>
+            <p>Casual tennis and padel matches often rely on memory, shouting the score, or checking a phone between points. That works until the match gets close, players switch sides, or someone forgets the score.</p>
+            <p>A smartwatch is a good fit only if the interaction is faster than the problem. If scoring requires menus, typing, or careful reading, the product fails in the real context.</p>
+          </section>
+          <section class="case-section" id="mvp">
+            <h2>MVP scope</h2>
+            <p>The first version should support tennis and padel scoring, one-tap point entry for each side, undo, current server, set progress, tie-break handling, and a clear match finished state.</p>
+            <p>Post-match history and simple stats can exist later, but they should not shape the first interface. The core job is live scoring.</p>
+          </section>
+          <section class="case-section" id="interaction">
+            <h2>Interaction rules</h2>
+            <p>Buttons need to be large, labels short, and mistakes reversible. The watch should show only the current match state and the next available action, because the user is not studying the screen.</p>
+            <p>The design should also handle edge cases without drama: accidental taps, changing server, tie-breaks, and correcting the previous point.</p>
+          </section>
+          <section class="case-section" id="next">
+            <h2>Next step</h2>
+            <p>I would build a clickable watch prototype and test it during an actual rally session, not at a desk. The key metric is not whether the UI looks understandable in a screenshot, but whether it can be used between points without interrupting the match.</p>
+          </section>
+        </article>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <span>Built with Figma &amp; code.</span>
+      <a class="back-to-top" href="#top">Back to top</a>
+    </footer>
+
+    <script defer src="script.js"></script>
+  </body>
+</html>
