@@ -878,6 +878,263 @@ if (caseSections.length && timelineLinks.length) {
   window.addEventListener("resize", setActiveTimelineLink);
 }
 
+const shavikkiPrototype = document.querySelector("[data-shavikki-prototype]");
+
+if (shavikkiPrototype) {
+  const departmentSelect = shavikkiPrototype.querySelector("[data-shavikki-department]");
+  const cabinetSelect = shavikkiPrototype.querySelector("[data-shavikki-cabinet]");
+  const title = shavikkiPrototype.querySelector("[data-shavikki-title]");
+  const breadcrumb = shavikkiPrototype.querySelector("[data-shavikki-breadcrumb]");
+  const statusPrimary = shavikkiPrototype.querySelector("[data-shavikki-status-primary]");
+  const statusSecondary = shavikkiPrototype.querySelector("[data-shavikki-status-secondary]");
+  const mapToggle = shavikkiPrototype.querySelector("[data-shavikki-map-toggle]");
+  const mapPanel = shavikkiPrototype.querySelector("[data-shavikki-map]");
+  const overlayClose = shavikkiPrototype.querySelector("[data-shavikki-overlay-close]");
+  const mapButtons = shavikkiPrototype.querySelectorAll("[data-section]");
+  const shelfCells = shavikkiPrototype.querySelectorAll(".shavikki-cell");
+  const backButton = shavikkiPrototype.querySelector("[data-shavikki-back]");
+  const productPanel = shavikkiPrototype.querySelector("[data-shavikki-products]");
+  const productTitle = shavikkiPrototype.querySelector("[data-shavikki-product-title]");
+  const productList = shavikkiPrototype.querySelector("[data-shavikki-product-list]");
+  const productPanelClose = shavikkiPrototype.querySelector("[data-shavikki-products-close]");
+  const groupPanel = shavikkiPrototype.querySelector("[data-shavikki-groups]");
+  const groupManage = shavikkiPrototype.querySelector("[data-shavikki-group-manage]");
+  const groupPanelClose = shavikkiPrototype.querySelector("[data-shavikki-groups-close]");
+  const scanButton = shavikkiPrototype.querySelector("[data-shavikki-scan]");
+  const wasteButton = shavikkiPrototype.querySelector("[data-shavikki-waste]");
+  const countValue = shavikkiPrototype.querySelector("[data-shavikki-count]");
+  const countMinus = shavikkiPrototype.querySelector("[data-shavikki-count-minus]");
+  const countPlus = shavikkiPrototype.querySelector("[data-shavikki-count-plus]");
+  let scannedCount = 1;
+
+  let activeSection = "maito";
+
+  const sectionLabels = {
+    maito: "Dairy department",
+    hevi: "Hevi",
+    valmisruoka: "Ready meals",
+    leipa: "Bakery",
+  };
+
+  const productGroups = {
+    maito: [
+      ["maidot", "Milk"],
+      ["voit", "Butter"],
+      ["jogurtit", "Yogurts"],
+    ],
+    hevi: [
+      ["hedelmat", "Fruit"],
+      ["vihannekset", "Vegetables"],
+      ["salaatit", "Salads"],
+    ],
+    valmisruoka: [
+      ["valmisateriat", "Ready meals"],
+      ["salaatit", "Salads"],
+      ["keitot", "Soups"],
+    ],
+    leipa: [
+      ["vaaleat-leivat", "White bread"],
+      ["ruisleivat", "Rye bread"],
+      ["pullat", "Buns"],
+    ],
+  };
+
+  const populateProductGroups = (section) => {
+    if (!departmentSelect) {
+      return;
+    }
+
+    departmentSelect.innerHTML = "";
+
+    (productGroups[section] || productGroups.maito).forEach(([value, label]) => {
+      const option = document.createElement("option");
+      option.value = value;
+      option.textContent = label;
+      departmentSelect.append(option);
+    });
+  };
+
+  const updateShavikkiContext = () => {
+    const selectedCategory = departmentSelect?.selectedOptions?.[0]?.textContent || "Maidot";
+    const section = sectionLabels[activeSection] || sectionLabels.maito;
+    const cabinet = cabinetSelect?.value || "4";
+
+    if (title) {
+      title.textContent = `${selectedCategory} shelf map - Unit ${cabinet}`;
+    }
+
+    if (breadcrumb) {
+      breadcrumb.textContent = `${section} > ${selectedCategory} > Unit ${cabinet}`;
+    }
+
+    setShavikkiStatus("2 sections", `need checking · Unit ${cabinet}`);
+  };
+
+  const setShavikkiStatus = (primary, secondary = "") => {
+    if (statusPrimary) {
+      statusPrimary.textContent = primary;
+    }
+
+    if (statusSecondary) {
+      statusSecondary.textContent = secondary;
+    }
+  };
+
+  const closeShavikkiOverlays = () => {
+    if (mapPanel) {
+      mapPanel.hidden = true;
+    }
+
+    if (productPanel) {
+      productPanel.hidden = true;
+    }
+
+    if (groupPanel) {
+      groupPanel.hidden = true;
+    }
+
+    mapToggle?.setAttribute("aria-expanded", "false");
+  };
+
+  const updateCount = () => {
+    if (countValue) {
+      countValue.textContent = String(scannedCount);
+    }
+  };
+
+  departmentSelect?.addEventListener("change", updateShavikkiContext);
+  cabinetSelect?.addEventListener("change", updateShavikkiContext);
+
+  mapToggle?.addEventListener("click", () => {
+    if (!mapPanel) {
+      return;
+    }
+
+    const shouldOpen = mapPanel.hidden;
+    closeShavikkiOverlays();
+    mapPanel.hidden = !shouldOpen;
+    mapToggle.setAttribute("aria-expanded", String(shouldOpen));
+  });
+
+  overlayClose?.addEventListener("click", () => {
+    closeShavikkiOverlays();
+    updateShavikkiContext();
+  });
+
+  groupManage?.addEventListener("click", () => {
+    if (!groupPanel) {
+      return;
+    }
+
+    closeShavikkiOverlays();
+    groupPanel.hidden = false;
+  });
+
+  groupPanelClose?.addEventListener("click", () => {
+    closeShavikkiOverlays();
+    updateShavikkiContext();
+  });
+
+  mapButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      mapButtons.forEach((item) => item.classList.remove("is-active"));
+      button.classList.add("is-active");
+
+      if (button.dataset.section) {
+        activeSection = button.dataset.section;
+        populateProductGroups(activeSection);
+      }
+
+      updateShavikkiContext();
+
+      setShavikkiStatus(button.textContent?.trim() || "Department", "Department map updated");
+
+      closeShavikkiOverlays();
+    });
+  });
+
+  shelfCells.forEach((cell, index) => {
+    cell.addEventListener("click", () => {
+      const row = cell.closest(".shavikki-shelf-row");
+      const shelfName = row?.querySelector("span")?.textContent || "Hylly";
+      const cellNumber = (index % 4) + 1;
+      const state = cell.classList.contains("is-warning")
+        ? "2-3 days left"
+        : cell.classList.contains("is-critical")
+          ? "0-1 days left"
+          : "No action needed";
+
+      shelfCells.forEach((item) => item.classList.remove("is-selected"));
+      cell.classList.add("is-selected");
+
+      setShavikkiStatus(`Shelf ${shelfName}, section ${cellNumber}`, state);
+
+      if (productTitle) {
+        productTitle.textContent = `Shelf ${shelfName}, section ${cellNumber}`;
+      }
+
+      if (productList) {
+        productList.innerHTML = "";
+        const products = (cell.dataset.products || "Ei tuotteita").split("|");
+
+        products.forEach((product) => {
+          const item = document.createElement("li");
+          item.textContent = product;
+          productList.append(item);
+        });
+      }
+
+      if (productPanel) {
+        closeShavikkiOverlays();
+        scannedCount = 1;
+        updateCount();
+        productPanel.hidden = false;
+      }
+    });
+  });
+
+  productPanelClose?.addEventListener("click", () => {
+    closeShavikkiOverlays();
+    shelfCells.forEach((item) => item.classList.remove("is-selected"));
+
+    updateShavikkiContext();
+  });
+
+  countMinus?.addEventListener("click", () => {
+    scannedCount = Math.max(1, scannedCount - 1);
+    updateCount();
+  });
+
+  countPlus?.addEventListener("click", () => {
+    scannedCount += 1;
+    updateCount();
+  });
+
+  scanButton?.addEventListener("click", () => {
+    scannedCount += 1;
+    updateCount();
+
+    setShavikkiStatus(`${scannedCount} products`, "Scanned in this shelf section");
+  });
+
+  wasteButton?.addEventListener("click", () => {
+    setShavikkiStatus(`${scannedCount} products`, "Marked as waste");
+
+    closeShavikkiOverlays();
+    shelfCells.forEach((item) => item.classList.remove("is-selected"));
+  });
+
+  backButton?.addEventListener("click", () => {
+    closeShavikkiOverlays();
+    shelfCells.forEach((item) => item.classList.remove("is-selected"));
+
+    setShavikkiStatus("Shelf map", "Back to unit view");
+  });
+
+  populateProductGroups(activeSection);
+  updateShavikkiContext();
+}
+
 const renderMoreCaseStudies = () => {
   if (!pageKey.startsWith("project-") || !mainElement) {
     return;
