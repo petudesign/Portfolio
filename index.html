@@ -93,7 +93,14 @@
           </div>
           <div class="selected-project selected-project-featured">
           <a class="featured-image media-preview media-preview-shavikki" href="shavikki.html" aria-label="Open S-Hävikki case study">
-            <img src="assets/shavikki-kaappikuva.png" alt="S-Hävikki branded food waste cabinet concept in a grocery store" decoding="async" fetchpriority="high">
+            <picture>
+              <source
+                type="image/webp"
+                srcset="assets/shavikki-kaappikuva-480.webp 480w, assets/shavikki-kaappikuva-768.webp 768w, assets/shavikki-kaappikuva-1100.webp 1100w"
+                sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1240px) min(780px, calc(100vw - 56px)), 520px"
+              >
+              <img src="assets/shavikki-kaappikuva.png" alt="S-Hävikki branded food waste cabinet concept in a grocery store" decoding="async" fetchpriority="high">
+            </picture>
             <span class="selected-card-scrim" aria-hidden="true"></span>
             <span class="selected-card-tags" aria-hidden="true">
               <span>Service Design</span>
@@ -120,13 +127,20 @@
               <video
                 class="hover-preview-video"
                 src="assets/filter-news-preview.mp4"
-                poster="assets/filternews-bbc.png"
+                poster="assets/filternews-bbc-760.webp"
                 muted
                 loop
                 playsinline
-                preload="auto"
+                preload="metadata"
               ></video>
-              <img class="mobile-preview-image" src="assets/filternews-bbc.png" alt="BBC news page softened by FilterNews topic controls" decoding="async">
+              <img
+                class="mobile-preview-image"
+                src="assets/filternews-bbc-520.webp"
+                srcset="assets/filternews-bbc-520.webp 520w, assets/filternews-bbc-760.webp 760w"
+                sizes="(max-width: 760px) calc(100vw - 64px), 260px"
+                alt="BBC news page softened by FilterNews topic controls"
+                decoding="async"
+              >
               <span class="selected-card-scrim" aria-hidden="true"></span>
               <span class="selected-card-tags" aria-hidden="true">
                 <span>Product</span>
@@ -193,9 +207,18 @@
                 muted
                 loop
                 playsinline
-                preload="auto"
+                preload="metadata"
               ></video>
-              <img class="mobile-preview-image" src="assets/elisa-final-design.png" alt="" aria-hidden="true" decoding="async" loading="lazy">
+              <img
+                class="mobile-preview-image"
+                src="assets/elisa-final-design-520.webp"
+                srcset="assets/elisa-final-design-520.webp 520w, assets/elisa-final-design-760.webp 760w"
+                sizes="(max-width: 760px) calc(100vw - 64px), 420px"
+                alt=""
+                aria-hidden="true"
+                decoding="async"
+                loading="lazy"
+              >
               <span class="case-card-tools" aria-label="Case includes 5 minute read and UX audit">
                 <span class="case-card-tool">
                   <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
