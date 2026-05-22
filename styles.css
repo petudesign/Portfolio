@@ -1359,6 +1359,66 @@ h1 em {
   line-height: 1.4;
 }
 
+.not-found {
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(280px, 0.64fr);
+  gap: clamp(38px, 6vw, 92px);
+  align-items: center;
+  min-height: calc(100vh - 236px);
+  padding: clamp(64px, 8vw, 126px) var(--page-x);
+}
+
+.not-found-copy {
+  min-width: 0;
+}
+
+.not-found .eyebrow {
+  margin: 0 0 18px;
+  color: var(--purple);
+  font-size: clamp(18px, 2.4vw, 28px);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.not-found h1 {
+  max-width: 11ch;
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(46px, 7vw, 94px);
+  font-weight: 400;
+  line-height: 0.96;
+}
+
+.not-found-copy > p:not(.eyebrow) {
+  max-width: 34ch;
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-size: clamp(18px, 1.6vw, 22px);
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.not-found-media {
+  display: grid;
+  min-width: 0;
+  margin: 0;
+  place-items: center;
+  border-radius: 24px;
+  padding: clamp(22px, 4vw, 54px);
+  background:
+    radial-gradient(circle at 52% 38%, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0) 46%),
+    #c9c1f2;
+  box-shadow: var(--shadow);
+}
+
+.not-found-media img {
+  width: min(100%, 560px);
+  border-radius: 12px;
+  box-shadow: 0 18px 46px rgba(23, 23, 23, 0.1);
+}
+
 .lab-board {
   display: grid;
   grid-template-columns: minmax(0, 1.12fr) minmax(220px, 0.88fr);
@@ -3459,6 +3519,10 @@ body.show-case-timeline .case-timeline {
     grid-template-columns: 1fr;
   }
 
+  .not-found {
+    grid-template-columns: 1fr;
+  }
+
   .prototype-lab-copy h2,
   .prototype-lab-copy > p:not(.eyebrow) {
     max-width: 720px;
@@ -3633,6 +3697,20 @@ body.show-case-timeline .case-timeline {
 
   h1 em {
     font-size: clamp(58px, 16vw, 74px);
+  }
+
+  .not-found {
+    min-height: 0;
+    padding-top: 58px;
+    padding-bottom: 54px;
+  }
+
+  .not-found h1 {
+    max-width: 10ch;
+  }
+
+  .not-found-media {
+    padding: 22px;
   }
 
   .selected-grid .media-preview {
