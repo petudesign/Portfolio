@@ -26,7 +26,7 @@
     <header class="site-header">
       <div class="brand">
         <a class="top-link" href="index.html" aria-label="Back to home">Petteri Helttula</a>
-        <span>Design &amp; Code</span>
+        <span>Design &amp; Prototypes</span>
       </div>
       <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
         <span></span>
@@ -92,6 +92,7 @@
             <a href="#overview">Overview</a>
             <a class="active" href="#problem-framing">Problem framing</a>
             <a href="#mvp">MVP scope</a>
+            <a href="#ai-workflow">AI workflow</a>
             <a href="#risks">Risks</a>
             <a href="#next">Next step</a>
           </nav>
@@ -108,6 +109,24 @@
             <p>The first version should cover task links, first-click capture, click heat maps, success and drop-off metrics, and a short AI-assisted summary that helps the designer notice friction faster.</p>
             <p>Anything beyond that, participant panels, advanced recruitment, complex segmentation, and polished reporting, should wait until the basic testing habit is proven.</p>
           </section>
+          <section class="case-section case-ai-workflow" id="ai-workflow">
+            <h2>AI-assisted workflow</h2>
+            <p>Flowmark is being shaped with Codex as a build partner, but the product direction is still led by design judgment. The useful split is not "AI made it" versus "I made it"; it is what AI helped move faster, and what I still had to decide.</p>
+            <div class="case-ai-grid">
+              <article>
+                <span>AI helped</span>
+                <p>Build interface iterations, explore prototype logic, and turn rough product ideas into something easier to inspect.</p>
+              </article>
+              <article>
+                <span>I directed</span>
+                <p>The MVP scope, testing loop, interaction priorities, and the constraints that keep the tool lightweight.</p>
+              </article>
+              <article>
+                <span>I evaluated</span>
+                <p>Whether the output made decisions clearer, where AI summaries could mislead, and what should be validated next.</p>
+              </article>
+            </div>
+          </section>
           <section class="case-section" id="risks">
             <h2>Risks</h2>
             <p>The biggest UX risk is false confidence. A lightweight testing platform can make numbers look more authoritative than they are. The interface needs to show sample size, task context, and uncertainty clearly, especially when AI summarizes behavior.</p>
@@ -121,8 +140,21 @@
     </main>
 
     <footer class="site-footer">
-      <span>Built with Figma &amp; code.</span>
-      <a class="back-to-top" href="#top">Back to top</a>
+      <div class="footer-inner">
+        <div class="footer-copy">
+          <span>Petteri Helttula</span>
+          <p>Product design, AI-assisted prototypes, and useful side builds.</p>
+          <small>Designed with Figma. Built with Codex. Refined through product judgment.</small>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="index.html#projects">Projects</a>
+          <a href="about.html">About</a>
+          <a href="blog.html">Blog</a>
+          <a href="https://www.linkedin.com/in/petteri-helttula/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:helttula.petteri@gmail.com">Email</a>
+          <a class="back-to-top" href="#top">Back to top</a>
+        </nav>
+      </div>
     </footer>
 
     <script defer src="script.js"></script>
