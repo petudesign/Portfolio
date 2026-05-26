@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A product design note on Andon Cafe in Stockholm, AI-managed hospitality, and why the interesting interface is not the coffee order but the operational layer behind it.">
+    <title>AI-hosted cafe in Stockholm - Petteri Helttula</title>
+    <link rel="canonical" href="https://portfoliobypetu.vercel.app/ai-hosted-cafe-in-stockholm.html">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <meta property="og:title" content="AI-hosted cafe in Stockholm - Petteri Helttula">
+    <meta property="og:description" content="A product design note on AI-managed hospitality and the operational interface behind a normal-looking cafe.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://portfoliobypetu.vercel.app/ai-hosted-cafe-in-stockholm.html">
+    <meta property="og:image" content="https://portfoliobypetu.vercel.app/assets/petteri-portrait.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI-hosted cafe in Stockholm - Petteri Helttula">
+    <meta name="twitter:description" content="A product design note on AI-managed hospitality and the operational interface behind a normal-looking cafe.">
+    <meta name="twitter:image" content="https://portfoliobypetu.vercel.app/assets/petteri-portrait.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="/_vercel/insights/script.js"></script>
+  </head>
+  <body data-page="blog">
+    <header class="site-header">
+      <div class="brand">
+        <a class="top-link" href="index.html" aria-label="Back to home">Petteri Helttula</a>
+        <span>Design &amp; Prototypes</span>
+      </div>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <a href="index.html#projects">Projects</a>
+        <a href="about.html">About</a>
+        <a class="active" href="blog.html">Blog</a>
+        <a href="https://drive.google.com/file/d/1jGHfK2btH744Slry8skZ1yfMZMGNYg3_/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
+        <a class="linkedin" href="https://www.linkedin.com/in/petteri-helttula/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <article class="blog-article">
+        <header class="blog-article-hero">
+          <a class="case-back" href="blog.html">Back to blog</a>
+          <p class="eyebrow">AI &amp; Ethics / Working note</p>
+          <h1>AI-hosted cafe in Stockholm</h1>
+          <p class="blog-article-dek">
+            The interesting part is not whether AI can make coffee. It is what happens when the operational layer of a very normal place starts making decisions without looking like a product interface at all.
+          </p>
+          <div class="blog-article-meta" aria-label="Post information">
+            <time datetime="2026-05-25">May 2026</time>
+            <span>4 min read</span>
+          </div>
+        </header>
+
+        <section class="blog-article-visual" aria-label="Article visual summary">
+          <div class="cafe-system-card">
+            <span>Visible service</span>
+            <strong>Human barista, normal cafe, familiar ritual.</strong>
+          </div>
+          <div class="cafe-system-card is-ai">
+            <span>Hidden system</span>
+            <strong>AI manager, supplier choices, hiring, pricing, inventory.</strong>
+          </div>
+          <div class="cafe-system-note">
+            <span>Design question</span>
+            <p>When the interface is mostly invisible, how do people understand control, responsibility, and failure?</p>
+          </div>
+        </section>
+
+        <div class="blog-article-body">
+          <p>
+            Andon Cafe in Stockholm is a useful AI story because it does not look like science fiction. According to Andon Labs, the cafe is a controlled experiment where an AI agent called Mona runs parts of the business while humans remain formally employed and able to intervene. Reporting from AP and Euronews describes the same basic setup: people still make and serve the coffee, but the AI manager handles a large part of the operational work behind the scenes.
+          </p>
+
+          <p>
+            That distinction matters. If the customer sees a person behind the counter, the service still feels human. The AI is not the face of the cafe as much as the invisible management system around it. From a product design point of view, that is the more interesting problem.
+          </p>
+
+          <h2>The real interface is accountability</h2>
+          <p>
+            A cafe has many small decisions that are easy to ignore when they work: what gets ordered, who is scheduled, what is on the menu, what a complaint becomes, and when someone needs to step in. Once an AI agent starts making those calls, the product is no longer just the chatbot. The product becomes the whole decision environment around the business.
+          </p>
+
+          <p>
+            This is where the ethical question becomes practical. The weak version of the debate is "AI versus humans." The stronger question is: what decisions should an AI be allowed to make, what needs human approval, and how clearly can the system explain what happened after something goes wrong?
+          </p>
+
+          <p>
+            I think it is genuinely exciting that technology keeps developing, especially when AI is used as a tool that helps people do better work. But I do not want the default future to be one where people are simply replaced by robots or agents. Jobs can change. Tasks can move. The role of the person can become more supervisory, creative, or judgment-heavy. But the human should not disappear from the system just because automation became possible.
+          </p>
+
+          <aside class="blog-pullout">
+            <p>For me, the design challenge is not making the AI feel more magical. It is making its boundaries, confidence, and responsibility easier to inspect.</p>
+          </aside>
+
+          <h2>What I would watch</h2>
+          <p>
+            If I were looking at this as a product case, I would not start with the novelty of an AI-run cafe. I would watch the failure points:
+          </p>
+          <ul>
+            <li>Can staff understand why Mona made a decision, or do they only see the result?</li>
+            <li>Is there a clean override path when the AI is technically allowed to act but practically wrong?</li>
+            <li>Do customers know when they are dealing with an AI-managed process, and does that change their trust?</li>
+            <li>Are the logs useful for learning, or only for explaining a mistake after the fact?</li>
+          </ul>
+
+          <h2>Why this feels bigger than one cafe</h2>
+          <p>
+            The cafe is small, but the pattern is not. A lot of AI products will not arrive as dramatic robot replacements. They will arrive as quiet operational layers inside familiar services: scheduling tools, support workflows, procurement, onboarding, pricing, QA, and internal decision support.
+          </p>
+
+          <p>
+            That makes the design work less glamorous and more important. The interface has to help people see what the system is doing, where it is uncertain, and when a human decision is still needed. Otherwise the AI becomes a manager without a usable management interface.
+          </p>
+
+          <section class="blog-source-list" aria-labelledby="sources-title">
+            <h2 id="sources-title">Sources I used</h2>
+            <a href="https://andonlabs.com/blog/ai-cafe-stockholm" target="_blank" rel="noopener noreferrer">Andon Labs: Our AI started a cafe in Stockholm</a>
+            <a href="https://apnews.com/article/84a8f903fdaea94e76e80e16ec3d9e6c" target="_blank" rel="noopener noreferrer">AP: The barista is human but an AI agent runs this experimental Swedish cafe</a>
+            <a href="https://www.euronews.com/next/2026/04/30/would-you-take-orders-from-a-chatbot-this-stockholm-cafe-is-run-by-an-ai-manager" target="_blank" rel="noopener noreferrer">Euronews: This Stockholm cafe is run by an AI manager</a>
+          </section>
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-copy">
+          <span>Petteri Helttula</span>
+          <p>Product design, AI-assisted prototypes, and useful side builds.</p>
+          <small>Designed with Figma. Built with Codex. Refined through product judgment.</small>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="index.html#projects">Projects</a>
+          <a href="about.html">About</a>
+          <a href="blog.html">Blog</a>
+          <a href="https://www.linkedin.com/in/petteri-helttula/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:helttula.petteri@gmail.com">Email</a>
+          <a class="back-to-top" href="#top">Back to top</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script defer src="script.js"></script>
+  </body>
+</html>

@@ -360,37 +360,37 @@ const companionContent = {
   },
   "project-smartgrocer": {
     intro:
-      "This companion is tuned for the SmartGrocer case, with questions around planning, habits, and reducing household admin.",
+      "This companion is tuned for the SmartGrocer case, with questions around Kesko, self-scanning, K-Plussa, and reducing friction across the grocery trip.",
     prompts: [
       {
         label: "Give me the 30-second version",
         answer:
-          "This case explores how grocery planning could feel less like household admin. The focus is on repeated use, saved patterns, faster editing, and reducing the feeling of starting from zero every week.",
+          "SmartGrocer is a Kesko self-scanning concept that connects dedicated handheld scanners with K-Plussa, shopping list sync, store guidance, and real-time savings. The point is to reduce friction across the whole trip, not just at checkout.",
       },
       {
         label: "What is this project about?",
         answer:
-          "A grocery-planning case about making weekly food decisions feel lighter, more organised, and less like another chore.",
+          "A retail UX and service design concept asking what self-scanning could become if the store already knew what the customer came to buy.",
       },
       {
         label: "What should I look for?",
         answer:
-          "Look for how the product handles repeated use: defaults, saved patterns, editing speed, and small moments that reduce planning fatigue.",
+          "Look for the system fit: K-Plussa identity, a synced shopping list, dedicated hardware, product guidance, live savings, and a checkout flow that becomes almost invisible.",
       },
       {
-        label: "What did Petteri learn?",
+        label: "Why dedicated hardware?",
         answer:
-          "He learned that planning tools need to get easier over time. If repeated tasks keep starting from zero, the product becomes another chore.",
+          "Because a grocery scanner has to work for a wide range of customers every time. Dedicated hardware avoids the inconsistency of phone cameras, permissions, screen sizes, batteries, and confidence levels.",
       },
       {
-        label: "What would he improve next?",
+        label: "What would he test first?",
         answer:
-          "He would test the repeat-use loop earlier and design more intentionally around shared household decisions.",
+          "A narrow real-store trip with 10-15 common products: does the scanner actually reduce uncertainty, time spent searching, checkout friction, and staff help requests?",
       },
       {
         label: "How does Petteri approach design?",
         answer:
-          "He looks for the hidden work in a routine, then designs the system so that repeated tasks get easier over time.",
+          "He looks for the hidden work around the interface: planning, searching, loyalty decisions, packing, checkout, and recovery when something goes wrong.",
       },
     ],
   },
@@ -466,10 +466,10 @@ const caseStudies = [
   {
     id: "project-smartgrocer",
     title: "SmartGrocer",
-    meta: "Planning UX",
+    meta: "Retail self-scanning",
     year: "2025",
     href: "smartgrocer.html",
-    description: "Making weekly grocery planning feel lighter and easier to repeat.",
+    description: "A Kesko self-scanning concept connecting dedicated scanners, K-Plussa, shopping list sync, and store guidance.",
   },
 ];
 

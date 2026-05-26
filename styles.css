@@ -1660,6 +1660,13 @@ h1 em {
   box-shadow: var(--shadow);
 }
 
+.smartgrocer-hero-image {
+  object-fit: contain;
+  background:
+    radial-gradient(circle at 72% 18%, rgba(255, 122, 0, 0.16), rgba(255, 122, 0, 0) 34%),
+    #f3efe8;
+}
+
 .case-media-shell {
   position: relative;
   overflow: hidden;
@@ -2119,6 +2126,565 @@ body.show-case-timeline .case-timeline {
 .case-ai-grid p {
   font-size: 17px;
   line-height: 1.4;
+}
+
+.smartgrocer-bento {
+  margin: clamp(44px, 5vw, 76px) 0 clamp(54px, 6vw, 88px);
+  padding: clamp(22px, 3.4vw, 34px);
+  border-radius: 16px;
+  color: #f8f8f8;
+  background:
+    radial-gradient(circle at 82% 12%, rgba(255, 111, 0, 0.26), rgba(255, 111, 0, 0) 32%),
+    linear-gradient(135deg, #151316, #1d1a1b);
+}
+
+.smartgrocer-bento > .eyebrow {
+  margin-bottom: 12px;
+  color: #ff7a00;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+}
+
+.smartgrocer-bento > h2 {
+  max-width: 760px;
+  margin: 0 0 clamp(22px, 3vw, 34px);
+  color: #f8f8f8;
+  font-size: clamp(30px, 3vw, 46px);
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.smartgrocer-bento-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.64fr 0.64fr;
+  grid-auto-rows: minmax(156px, auto);
+  gap: 12px;
+}
+
+.smartgrocer-bento-card {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #eee8df;
+}
+
+.smartgrocer-bento-card span {
+  display: block;
+  color: #29232a;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.smartgrocer-bento-card h3 {
+  margin: 8px 0 0;
+  color: #29232a;
+  font-size: clamp(23px, 2.1vw, 34px);
+  font-weight: 500;
+  line-height: 1.08;
+}
+
+.smartgrocer-bento-card p {
+  max-width: 28ch;
+  margin: 8px 0 0;
+  color: rgba(41, 35, 42, 0.78);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.smartgrocer-bento-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.crop-gemini-logo {
+  transform: translate(-2%, -2%) scale(1.08);
+  transform-origin: center;
+}
+
+.smartgrocer-bento-card-map {
+  grid-row: span 2;
+  display: grid;
+  align-content: space-between;
+}
+
+.smartgrocer-bento-card-map > div:first-child {
+  padding: 26px 28px 18px;
+}
+
+.smartgrocer-bento-image-map {
+  height: min(320px, 30vw);
+  border-top: 1px solid rgba(23, 23, 23, 0.08);
+  object-position: center;
+}
+
+.smartgrocer-map-visual {
+  position: relative;
+  height: min(320px, 30vw);
+  border-top: 1px solid rgba(23, 23, 23, 0.08);
+  background:
+    linear-gradient(90deg, rgba(41, 35, 42, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(41, 35, 42, 0.08) 1px, transparent 1px),
+    repeating-linear-gradient(90deg, transparent 0 54px, rgba(255, 255, 255, 0.86) 54px 82px),
+    linear-gradient(135deg, #d8dde2, #f4f1ea);
+  background-size: 34px 34px, 34px 34px, auto, auto;
+}
+
+.smartgrocer-map-visual::before,
+.smartgrocer-map-visual::after {
+  position: absolute;
+  content: "";
+  border-radius: 4px;
+  background: rgba(170, 179, 186, 0.42);
+}
+
+.smartgrocer-map-visual::before {
+  inset: 18px 26px auto 26px;
+  height: 28px;
+}
+
+.smartgrocer-map-visual::after {
+  right: 20px;
+  bottom: 20px;
+  width: 62px;
+  height: 86px;
+}
+
+.map-route {
+  position: absolute;
+  left: 29%;
+  top: 23%;
+  width: 31%;
+  height: 52%;
+  border: 6px solid rgba(36, 174, 82, 0.62);
+  border-right: 0;
+  border-radius: 4px 0 0 4px;
+}
+
+.map-pin {
+  position: absolute;
+  z-index: 1;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  background: #ff7a00;
+  box-shadow: 0 10px 18px rgba(41, 35, 42, 0.18);
+}
+
+.map-pin::before {
+  color: #fff;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.map-pin-1 {
+  left: 17%;
+  top: 42%;
+  width: 38px;
+  height: 38px;
+  border-radius: 50% 50% 50% 10px;
+  background: #e83e34;
+  transform: rotate(-45deg);
+}
+
+.map-pin-1::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.map-pin-2 {
+  left: 13%;
+  bottom: 19%;
+  background: #53bfd1;
+}
+
+.map-pin-2::before {
+  content: "B";
+}
+
+.map-pin-3 {
+  left: 34%;
+  top: 33%;
+  background: #25ae52;
+}
+
+.map-pin-3::before {
+  content: "P";
+}
+
+.map-pin-4 {
+  right: 30%;
+  top: 40%;
+  background: #e6781e;
+}
+
+.map-pin-4::before {
+  content: "S";
+}
+
+.map-pin-5 {
+  right: 20%;
+  bottom: 24%;
+  background: #8a5bd6;
+}
+
+.map-pin-5::before {
+  content: "K";
+}
+
+.smartgrocer-bento-card-duration {
+  padding: 24px;
+  background: #f26a00;
+}
+
+.smartgrocer-bento-card-duration span,
+.smartgrocer-bento-card-duration h3 {
+  color: #fff7ed;
+}
+
+.smartgrocer-time-bars {
+  display: grid;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.smartgrocer-time-bars div {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 7px 10px;
+  border-radius: 4px;
+  color: #fff;
+  background: rgba(21, 19, 22, 0.78);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.smartgrocer-time-bars div:last-child {
+  color: #29232a;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.smartgrocer-time-bars span {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.smartgrocer-bento-card-brand {
+  display: grid;
+  place-items: center;
+  background: #f26a00;
+}
+
+.smartgrocer-bento-card-brand strong {
+  color: #fff;
+  font-size: clamp(76px, 7vw, 124px);
+  font-weight: 800;
+  line-height: 0.9;
+  text-decoration: underline;
+  text-decoration-thickness: 8px;
+  text-underline-offset: 14px;
+}
+
+.smartgrocer-bento-card-assistant {
+  grid-row: span 2;
+  display: grid;
+  align-content: space-between;
+  padding: 18px 18px 0;
+  background:
+    radial-gradient(circle at 60% 28%, rgba(255, 122, 0, 0.18), rgba(255, 122, 0, 0) 40%),
+    #f4dcc4;
+}
+
+.smartgrocer-bento-image-phone {
+  align-self: end;
+  justify-self: center;
+  width: min(150px, 92%);
+  height: 250px;
+  border-radius: 30px 30px 18px 18px;
+  object-fit: cover;
+  object-position: top center;
+  box-shadow: 0 18px 30px rgba(41, 35, 42, 0.24);
+}
+
+.smartgrocer-phone-visual {
+  align-self: end;
+  justify-self: center;
+  width: min(156px, 92%);
+  height: 250px;
+  padding: 11px;
+  border: 7px solid #111;
+  border-bottom-width: 14px;
+  border-radius: 34px 34px 22px 22px;
+  background: #111;
+  box-shadow: 0 18px 30px rgba(41, 35, 42, 0.24);
+}
+
+.smartgrocer-phone-screen {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 23px 23px 14px 14px;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255, 122, 0, 0.18), transparent 30%),
+    #fff8ed;
+}
+
+.smartgrocer-phone-screen::before {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  width: 42px;
+  height: 6px;
+  border-radius: 999px;
+  background: #111;
+  content: "";
+  transform: translateX(-50%);
+}
+
+.smartgrocer-phone-screen strong {
+  position: absolute;
+  right: 12px;
+  bottom: 17px;
+  left: 12px;
+  color: #29232a;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.food-dot {
+  position: absolute;
+  border-radius: 999px;
+}
+
+.food-dot-1 {
+  top: 45px;
+  left: 34px;
+  width: 48px;
+  height: 48px;
+  background: #ffb000;
+}
+
+.food-dot-2 {
+  top: 72px;
+  right: 27px;
+  width: 30px;
+  height: 58px;
+  border-radius: 8px;
+  background: #8aba22;
+  transform: rotate(10deg);
+}
+
+.food-dot-3 {
+  top: 112px;
+  left: 22px;
+  width: 22px;
+  height: 54px;
+  border-radius: 12px;
+  background: #7fba32;
+  transform: rotate(-24deg);
+}
+
+.food-dot-4 {
+  right: 26px;
+  bottom: 64px;
+  width: 28px;
+  height: 28px;
+  background: #8b3d2e;
+  transform: rotate(28deg);
+}
+
+.smartgrocer-bento-card-value {
+  grid-column: span 2;
+  min-height: 220px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(240px, 1fr);
+  align-items: end;
+  background: #f26a00;
+}
+
+.smartgrocer-bento-card-value > div {
+  position: relative;
+  z-index: 1;
+  padding: 28px;
+}
+
+.smartgrocer-bento-card-value span,
+.smartgrocer-bento-card-value h3,
+.smartgrocer-bento-card-value p {
+  color: #fff7ed;
+}
+
+.smartgrocer-bento-image-basket {
+  align-self: stretch;
+  min-height: 220px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.smartgrocer-basket-visual {
+  position: relative;
+  align-self: stretch;
+  min-height: 220px;
+}
+
+.basket-handle {
+  position: absolute;
+  right: 28%;
+  bottom: 122px;
+  width: 122px;
+  height: 72px;
+  border: 12px solid rgba(255, 247, 237, 0.92);
+  border-bottom: 0;
+  border-radius: 78px 78px 0 0;
+}
+
+.basket-body {
+  position: absolute;
+  right: 16%;
+  bottom: 24px;
+  width: 230px;
+  height: 118px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px 12px 24px 24px;
+  background:
+    repeating-linear-gradient(90deg, rgba(255, 247, 237, 0.18) 0 2px, transparent 2px 22px),
+    #ee5f00;
+  box-shadow: 0 22px 34px rgba(41, 35, 42, 0.22);
+}
+
+.basket-body strong {
+  color: #fff;
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1;
+  text-decoration: underline;
+  text-decoration-thickness: 5px;
+  text-underline-offset: 8px;
+}
+
+.produce {
+  position: absolute;
+  z-index: 2;
+  border-radius: 999px;
+}
+
+.produce-1 {
+  right: 27%;
+  bottom: 147px;
+  width: 54px;
+  height: 54px;
+  background: #f0c600;
+}
+
+.produce-2 {
+  right: 41%;
+  bottom: 128px;
+  width: 44px;
+  height: 78px;
+  border-radius: 26px 26px 12px 12px;
+  background: #36a852;
+  transform: rotate(-18deg);
+}
+
+.produce-3 {
+  right: 17%;
+  bottom: 134px;
+  width: 42px;
+  height: 42px;
+  background: #e8392f;
+}
+
+.produce-4 {
+  right: 52%;
+  bottom: 112px;
+  width: 34px;
+  height: 64px;
+  border-radius: 20px 20px 10px 10px;
+  background: #f4e7b6;
+  transform: rotate(21deg);
+}
+
+.produce-5 {
+  right: 10%;
+  bottom: 104px;
+  width: 26px;
+  height: 70px;
+  border-radius: 18px;
+  background: #7bb940;
+  transform: rotate(34deg);
+}
+
+.smartgrocer-bento-card-store {
+  min-height: 156px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.34), rgba(21, 19, 22, 0.28)),
+    #d7d7d2;
+}
+
+.smartgrocer-bento-card-store .smartgrocer-bento-image {
+  object-position: center 48%;
+}
+
+.smartgrocer-store-visual {
+  position: relative;
+  height: 100%;
+  min-height: 156px;
+  overflow: hidden;
+}
+
+.smartgrocer-store-visual span {
+  position: absolute;
+  bottom: 0;
+  width: 26%;
+  height: 76%;
+  border-radius: 8px 8px 0 0;
+  background:
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.7) 0 7px, rgba(22, 116, 68, 0.36) 7px 15px),
+    #f0f0ec;
+}
+
+.smartgrocer-store-visual span:nth-child(1) {
+  left: 8%;
+}
+
+.smartgrocer-store-visual span:nth-child(2) {
+  left: 38%;
+}
+
+.smartgrocer-store-visual span:nth-child(3) {
+  right: 8%;
+}
+
+.smartgrocer-store-visual strong {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  display: grid;
+  width: 46px;
+  height: 36px;
+  place-items: center;
+  border-radius: 4px;
+  color: #fff;
+  background: #f26a00;
+  font-size: 22px;
+  line-height: 1;
+  transform: translateX(-50%);
 }
 
 .case-section-band {
@@ -3203,6 +3769,195 @@ body.show-case-timeline .case-timeline {
   line-height: 1.15;
 }
 
+.blog-article {
+  padding: clamp(72px, 9vw, 132px) var(--page-x) clamp(86px, 10vw, 150px);
+}
+
+.blog-article-hero {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.blog-article-hero h1 {
+  max-width: 760px;
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(52px, 7vw, 112px);
+  font-weight: 400;
+  line-height: 0.98;
+}
+
+.blog-article-dek {
+  max-width: 760px;
+  margin: 28px 0 0;
+  color: var(--muted);
+  font-size: clamp(21px, 2.4vw, 30px);
+  font-weight: 400;
+  line-height: 1.28;
+}
+
+.blog-article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.blog-article-meta span,
+.blog-article-meta time {
+  display: inline-grid;
+  min-height: 34px;
+  place-items: center;
+  padding: 0 13px;
+  border: 1px solid rgba(23, 23, 23, 0.12);
+  border-radius: 999px;
+  color: var(--muted);
+  background: rgba(251, 251, 251, 0.72);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.blog-article-visual {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 0.9fr) minmax(280px, 1.2fr);
+  gap: 14px;
+  margin: clamp(42px, 6vw, 78px) 0;
+  padding: clamp(18px, 3vw, 28px);
+  border: 1px solid rgba(88, 57, 115, 0.12);
+  border-radius: 14px;
+  background:
+    linear-gradient(rgba(23, 23, 23, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23, 23, 23, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 82% 16%, rgba(216, 240, 107, 0.24), rgba(216, 240, 107, 0) 34%),
+    linear-gradient(135deg, rgba(88, 57, 115, 0.06), rgba(251, 251, 251, 0.72));
+  background-size: 28px 28px, 28px 28px, auto, auto;
+}
+
+.cafe-system-card,
+.cafe-system-note {
+  display: grid;
+  align-content: space-between;
+  min-height: 190px;
+  padding: 20px;
+  border: 1px solid rgba(23, 23, 23, 0.1);
+  border-radius: 10px;
+  background: rgba(251, 251, 251, 0.76);
+}
+
+.cafe-system-card.is-ai {
+  background:
+    radial-gradient(circle at 82% 18%, rgba(88, 57, 115, 0.14), rgba(88, 57, 115, 0) 36%),
+    rgba(251, 251, 251, 0.76);
+}
+
+.cafe-system-card span,
+.cafe-system-note span {
+  color: var(--purple);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.cafe-system-card strong {
+  max-width: 15ch;
+  color: var(--text);
+  font-size: clamp(25px, 2.6vw, 38px);
+  font-weight: 400;
+  line-height: 1.06;
+}
+
+.cafe-system-note {
+  color: #f8f8f8;
+  background:
+    radial-gradient(circle at 78% 18%, rgba(88, 57, 115, 0.1), rgba(88, 57, 115, 0) 36%),
+    rgba(251, 251, 251, 0.82);
+}
+
+.cafe-system-note p {
+  max-width: 26ch;
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(23px, 2.4vw, 34px);
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.blog-article-body {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.blog-article-body > p,
+.blog-article-body li {
+  color: var(--text);
+  font-size: clamp(19px, 1.45vw, 22px);
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.blog-article-body > p {
+  margin: 0 0 24px;
+}
+
+.blog-article-body h2 {
+  margin: clamp(44px, 5vw, 66px) 0 16px;
+  color: var(--purple);
+  font-size: clamp(30px, 3vw, 44px);
+  font-weight: 400;
+  line-height: 1.12;
+}
+
+.blog-article-body ul {
+  display: grid;
+  gap: 14px;
+  margin: 0 0 28px;
+  padding-left: 1.2em;
+}
+
+.blog-pullout {
+  margin: clamp(34px, 5vw, 58px) 0;
+  padding: clamp(22px, 3vw, 30px);
+  border-left: 4px solid var(--purple);
+  border-radius: 0 10px 10px 0;
+  background: rgba(88, 57, 115, 0.055);
+}
+
+.blog-pullout p {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(22px, 2.2vw, 32px);
+  font-weight: 400;
+  line-height: 1.22;
+}
+
+.blog-source-list {
+  display: grid;
+  gap: 12px;
+  margin-top: clamp(44px, 5vw, 66px);
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.blog-source-list h2 {
+  margin: 0 0 4px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.blog-source-list a {
+  color: var(--purple);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.35;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
 .site-footer {
   position: relative;
   padding: 40px var(--page-x) 32px;
@@ -3958,6 +4713,23 @@ body.show-case-timeline .case-timeline {
     object-fit: cover;
   }
 
+  .smartgrocer-bento {
+    border-radius: 12px;
+  }
+
+  .smartgrocer-bento-grid,
+  .smartgrocer-bento-card-value {
+    grid-template-columns: 1fr;
+  }
+
+  .smartgrocer-bento-card-value {
+    min-height: 0;
+  }
+
+  .smartgrocer-bento-image-basket {
+    min-height: 230px;
+  }
+
   .prototype-lab {
     padding-top: 14px;
   }
@@ -4050,6 +4822,30 @@ body.show-case-timeline .case-timeline {
     grid-template-columns: 1fr;
   }
 
+  .smartgrocer-bento-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .smartgrocer-bento-card-map,
+  .smartgrocer-bento-card-assistant {
+    grid-row: auto;
+  }
+
+  .smartgrocer-bento-card-map,
+  .smartgrocer-bento-card-value {
+    grid-column: 1 / -1;
+  }
+
+  .smartgrocer-bento-image-map {
+    height: auto;
+    min-height: 260px;
+    max-height: 360px;
+  }
+
+  .smartgrocer-bento-image-phone {
+    height: 220px;
+  }
+
   .case-facts h2 {
     font-size: 22px;
   }
@@ -4087,6 +4883,15 @@ body.show-case-timeline .case-timeline {
     grid-template-columns: 1fr;
     gap: 9px;
     padding: 24px 0;
+  }
+
+  .blog-article-visual {
+    grid-template-columns: 1fr;
+  }
+
+  .cafe-system-card,
+  .cafe-system-note {
+    min-height: 156px;
   }
 
   .more-case-row {
