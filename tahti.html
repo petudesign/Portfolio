@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Tahti case study: a Chrome extension experiment for reading selected text one word at a time at a controlled pace.">
+    <title>Tahti - Petteri Helttula</title>
+    <link rel="canonical" href="https://portfoliobypetu.vercel.app/tahti.html">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <meta property="og:title" content="Tahti - Petteri Helttula">
+    <meta property="og:description" content="A reading support experiment for pace, focus, and lower-friction reading starts.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://portfoliobypetu.vercel.app/tahti.html">
+    <meta property="og:image" content="https://portfoliobypetu.vercel.app/assets/tahtiUIv3.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tahti - Petteri Helttula">
+    <meta name="twitter:description" content="A reading support experiment for pace, focus, and lower-friction reading starts.">
+    <meta name="twitter:image" content="https://portfoliobypetu.vercel.app/assets/tahtiUIv3.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="/_vercel/insights/script.js"></script>
+  </head>
+  <body data-page="project-tahti">
+    <header class="site-header">
+      <div class="brand">
+        <a class="top-link" href="index.html" aria-label="Back to home">Petteri Helttula</a>
+        <span>Design &amp; Prototypes</span>
+      </div>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <a class="active" href="index.html#projects">Projects</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="https://drive.google.com/file/d/1jGHfK2btH744Slry8skZ1yfMZMGNYg3_/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
+        <a class="linkedin" href="https://www.linkedin.com/in/petteri-helttula/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="case-hero" aria-labelledby="case-title">
+        <a class="case-back" href="index.html">Back to projects</a>
+        <p class="eyebrow">Chrome Extension / Reading Support Experiment</p>
+        <h1 id="case-title">Tahti</h1>
+        <p class="tahti-definition"><strong>Tahti</strong> <span>noun</span> pace, rhythm</p>
+        <div class="case-facts" id="overview" aria-label="Project overview">
+          <div>
+            <h2>Overview</h2>
+            <p>Tahti is an experiment in reading selected text one word at a time at a controlled rhythm. The goal is not to prove that this is a better way to read everything, but to test whether pacing can make starting, focusing, and staying with text feel easier.</p>
+            <p class="case-read-time">
+              <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                <circle cx="8" cy="8" r="6"></circle>
+                <path d="M8 4.8V8l2.3 1.4"></path>
+              </svg>
+              <span>4 min read</span>
+            </p>
+          </div>
+          <div>
+            <h2>My role</h2>
+            <div class="case-role-tags" aria-label="Project roles">
+              <span>Product thinking</span>
+              <span>UX design</span>
+              <span>Interaction design</span>
+              <span>MVP scoping</span>
+            </div>
+          </div>
+          <div>
+            <h2>Status</h2>
+            <p>Active experiment, 2026</p>
+          </div>
+        </div>
+        <div class="case-image tahti-hero-visual" role="img" aria-label="Tahti wordmark over a moving soft gradient background">
+          <span class="tahti-cover-word">Tahti</span>
+          <span class="tahti-cover-definition">noun &middot; pace, rhythm</span>
+        </div>
+        <section class="case-impact" aria-labelledby="takeaways-title">
+          <h2 id="takeaways-title">Project Takeaways</h2>
+          <div class="impact-grid">
+            <article>
+              <h3>What I explored</h3>
+              <p>Whether a one-word reading mode can reduce the friction of starting a longer text and help the user stay with a controlled reading rhythm.</p>
+            </article>
+            <article>
+              <h3>What is worth preserving</h3>
+              <p>The strongest decision is the narrow MVP: selected text, overlay reader, pace control, pause, rewind, and basic comfort settings.</p>
+            </article>
+            <article>
+              <h3>What needs validation</h3>
+              <p>The risk is comprehension. Tahti may help focus, but it can also remove sentence structure, scanning, and context that normal reading depends on.</p>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <div class="case-layout">
+        <aside class="case-timeline" aria-label="On this page">
+          <p>On this page</p>
+          <nav>
+            <a href="#overview">Overview</a>
+            <a class="active" href="#problem-framing">Problem framing</a>
+            <a class="timeline-child" href="#why-extension">Why extension first</a>
+            <a class="timeline-child" href="#research-context">Research context</a>
+            <a href="#mvp">MVP scope</a>
+            <a href="#interaction">Interaction decisions</a>
+            <a href="#risks">Risks</a>
+            <a href="#next">Next step</a>
+          </nav>
+        </aside>
+
+        <article class="case-content">
+          <section class="case-section" id="problem-framing">
+            <h2>Problem framing</h2>
+            <p>Some reading problems start before comprehension. A long block of text can feel heavy before the first sentence is even read. Tahti looks at that starting moment: what if the interface reduced the visible amount of text and gave the user a simple rhythm to follow?</p>
+            <p>The starting point is personal: I have mild astigmatism, and ADD makes sustained reading focus harder for me at times. I am also not a particularly fast reader in the traditional line-by-line format. In my own use, Tahti has helped in some situations by reducing visual load, giving the reading session a clearer pace, and letting me move through text faster than I normally would. That is a useful signal, but not enough evidence on its own.</p>
+            <p>The product should not be framed as a speed-reading promise. Reading one word at a time can remove useful context, make backtracking harder, and flatten the natural rhythm of paragraphs. A more honest direction is reading support: pace, focus, and temporary structure when ordinary reading feels demanding.</p>
+            <div class="case-callout">
+              <p><strong>Product principle:</strong> Tahti should help users control reading pace without pretending that faster reading is automatically better reading.</p>
+            </div>
+          </section>
+
+          <section class="case-section case-subsection" id="why-extension">
+            <h3>Why a Chrome extension first</h3>
+            <p>The first useful test does not need accounts, a mobile app, reading streaks, PDFs, or AI summaries. It needs one core behavior: select text on a web page and read it in a focused overlay.</p>
+            <p>Selected text keeps the MVP technically small and gives the user control. Full article parsing can wait, because web pages contain headings, images, tables, embeds, code blocks, and layout patterns that would quickly turn the first version into a parser project instead of a reading experiment.</p>
+          </section>
+
+          <section class="case-section case-subsection" id="research-context">
+            <h3>Research context</h3>
+            <p>Tahti sits close to a known reading method called Rapid Serial Visual Presentation, or RSVP. The basic idea is not new: words or small chunks are shown sequentially in one fixed visual position, reducing the need for eye movements.</p>
+            <p>The evidence is mixed, which is exactly why I want to keep the product claim careful. A mobile readability study found that RSVP formats increased reading speed for short texts without significant differences in comprehension or task load, but longer texts increased task load. A study of Spritz-style RSVP found weaker literal comprehension and more visual fatigue, likely because users lose rereading, parafoveal preview, and some natural control over pace.</p>
+            <p>There is also a relevant accessibility angle. Research with visually impaired readers has found faster reading with dynamic text presentation, including RSVP, compared with more traditional page-style presentation. That does not prove Tahti works for attention or focus, but it supports the idea that alternative text presentation can be worth testing for specific reading constraints.</p>
+            <ul class="case-source-list">
+              <li><a href="https://www.sciencedirect.com/science/article/abs/pii/S0953543803000390" target="_blank" rel="noopener noreferrer">Adaptive RSVP on mobile devices</a></li>
+              <li><a href="https://www.sciencedirect.com/science/article/abs/pii/S0747563214007663" target="_blank" rel="noopener noreferrer">Spritz and RSVP reading comprehension</a></li>
+              <li><a href="https://pubmed.ncbi.nlm.nih.gov/7500210/" target="_blank" rel="noopener noreferrer">RSVP and dynamic text for visually impaired readers</a></li>
+              <li><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0153786" target="_blank" rel="noopener noreferrer">RSVP reading-rate limits and comprehension caveats</a></li>
+            </ul>
+            <div class="case-callout">
+              <p><strong>Design implication:</strong> Tahti should be tested as reading support for specific situations, not positioned as a universal speed-reading tool.</p>
+            </div>
+          </section>
+
+          <section class="case-section" id="mvp">
+            <h2>MVP scope</h2>
+            <p>The first build is a framework-free Chrome extension. The user selects text, launches Tahti from the context menu or extension popup, and reads the selection one word at a time in an overlay.</p>
+            <ul>
+              <li><strong>Core reader:</strong> one-word display, play, pause, reset, back 10, and next 10.</li>
+              <li><strong>Pace control:</strong> WPM starts lower, warms up toward the chosen pace, and pauses slightly longer after punctuation.</li>
+              <li><strong>Comfort settings:</strong> font size, dark/light mode, and a short countdown so the first word is not missed.</li>
+              <li><strong>Out of scope:</strong> accounts, analytics, streaks, mobile app, PDF support, AI features, and automatic article extraction.</li>
+            </ul>
+          </section>
+
+          <section class="case-section" id="interaction">
+            <h2>Interaction decisions</h2>
+            <p>The reader UI has one main job: reduce eye work. If the user only gets a short countdown before the first word appears, they should not have to scan the edges of the screen to understand controls, progress, or current state.</p>
+            <figure class="case-section-figure">
+              <div class="case-image case-media-shell tahti-video-shell">
+                <video
+                  class="case-video"
+                  src="assets/tahtivideo.mp4"
+                  poster="assets/tahtiUIv3.png"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  aria-label="Tahti reader prototype video"
+                ></video>
+                <button class="case-video-toggle" type="button" aria-label="Pause video" aria-pressed="false">
+                  <span class="case-video-toggle-icon" aria-hidden="true"></span>
+                  <span class="case-video-toggle-label">Pause</span>
+                </button>
+              </div>
+              <figcaption>The current prototype keeps the reading word, controls, and progress close to the user's central focus.</figcaption>
+            </figure>
+            <p>The current direction keeps the word, controls, and progress in one central reading stack. WPM and font size use compact sliders instead of stepper buttons, because the steppers made the overlay feel too much like a control panel.</p>
+            <div class="tahti-snapshot-grid" aria-label="Tahti prototype screenshots">
+              <figure>
+                <button class="case-image-zoom" type="button" aria-label="Open Tahti context menu screenshot larger">
+                  <img src="assets/tahti_rightclickparannusv1.png" alt="Selected article text with a browser context menu option to read with Tahti." decoding="async" loading="lazy">
+                </button>
+                <figcaption>The first version required opening the extension after selecting text. Moving launch into the right-click menu removes that extra step.</figcaption>
+              </figure>
+              <figure>
+                <button class="case-image-zoom" type="button" aria-label="Open early Tahti overlay screenshot larger">
+                  <img src="assets/tahti_ekav1.png" alt="Early Tahti reader overlay with settings panel and bottom controls." decoding="async" loading="lazy">
+                </button>
+                <figcaption>The first overlay exposed settings, but split attention across too many areas.</figcaption>
+              </figure>
+              <figure>
+                <button class="case-image-zoom" type="button" aria-label="Open updated Tahti overlay screenshot larger">
+                  <img src="assets/tahtiUIv3.png" alt="Updated Tahti reader overlay with centered word, progress, and compact controls." decoding="async" loading="lazy">
+                </button>
+                <figcaption>The later version pulls progress and controls into a tighter reading stack.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="case-section" id="risks">
+            <h2>Risks</h2>
+            <p>The main UX risk is false usefulness. Tahti may feel calmer while also reducing comprehension. One-word reading removes many things people normally rely on: sentence shape, paragraph rhythm, quick back-scanning, lists, visual grouping, and the ability to slow down naturally when the content gets harder.</p>
+            <p>That is why the project should stay in experiment mode until it is tested with real reading tasks. The useful question is not "can this move words across the screen?" but "does this help the user start, continue, and understand enough to make the tradeoff worth it?"</p>
+          </section>
+
+          <section class="case-section" id="next">
+            <h2>Next step</h2>
+            <p>I would keep the next version narrow: use Tahti on real articles, notes, and documentation, then log where it helps and where it damages understanding. After that, I want to run user testing to understand whether the need exists beyond my own reading habits and whether the interaction helps other people with focus, visual load, or reading fatigue.</p>
+            <p>If that signal is positive, the next feature worth exploring is article mode with pauses for headings, images, tables, and other elements that should not be forced into a one-word stream.</p>
+            <div class="case-callout">
+              <p><strong>Validation questions:</strong> do I start reading more easily, stay focused longer, understand enough, feel less tired, and know which text types are clearly wrong for this mode?</p>
+            </div>
+          </section>
+        </article>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-copy">
+          <span>Petteri Helttula</span>
+          <p>Product design, AI-assisted prototypes, and useful side builds.</p>
+          <small>Designed with Figma. Built with Codex. Refined through product judgment.</small>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="index.html#projects">Projects</a>
+          <a href="about.html">About</a>
+          <a href="blog.html">Blog</a>
+          <a href="https://www.linkedin.com/in/petteri-helttula/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:helttula.petteri@gmail.com">Email</a>
+          <a class="back-to-top" href="#top">Back to top</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script defer src="script.js"></script>
+  </body>
+</html>

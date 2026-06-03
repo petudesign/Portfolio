@@ -11,6 +11,14 @@ let companionMessages = document.querySelector(".companion-messages");
 let companionPrompts = document.querySelector(".companion-prompts");
 let companionHeaderIcon = document.querySelector(".companion-header-icon");
 
+if (document.body.dataset.page === "home") {
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      document.body.classList.add("hero-ready");
+    });
+  });
+}
+
 const companionContent = {
   home: {
     intro:
@@ -216,6 +224,37 @@ const companionContent = {
         label: "What would he test first?",
         answer:
           "Whether the lightweight setup actually makes teams test prototypes more often. If it does not change behavior, the product should stay as a learning artifact.",
+      },
+    ],
+  },
+  "project-tahti": {
+    intro:
+      "This companion is tuned for the Tahti case, with questions around reading support, focus, and keeping the MVP narrow.",
+    prompts: [
+      {
+        label: "Give me the 30-second version",
+        answer:
+          "Tahti is a Chrome extension experiment for reading selected text one word at a time at a controlled pace. It is framed as reading support, not a speed-reading promise.",
+      },
+      {
+        label: "What is this project about?",
+        answer:
+          "It started from a personal reading friction: mild astigmatism, ADD, and not being a particularly fast line-by-line reader. The product question is whether the same pacing model helps other people too.",
+      },
+      {
+        label: "What should I look for?",
+        answer:
+          "Look for the scope decisions: selected text first, no accounts, no streaks, no AI, no full article parsing, and controls that stay close to the reading focus.",
+      },
+      {
+        label: "What is the main risk?",
+        answer:
+          "Comprehension. RSVP research is mixed: fixed-position word presentation can help in some contexts, but studies also show weaker literal comprehension, more fatigue, or higher task load in others.",
+      },
+      {
+        label: "What would he test first?",
+        answer:
+          "Real reading sessions with other users: does Tahti help them start more easily, stay focused longer, and understand enough for the tradeoff to be worth it?",
       },
     ],
   },
@@ -436,6 +475,14 @@ const caseStudies = [
     href: "filter-news.html",
     image: "assets/filternews-bbc.png",
     description: "Reducing cognitive load in news consumption through filtering and hierarchy.",
+  },
+  {
+    id: "project-tahti",
+    title: "Tahti",
+    meta: "Reading support",
+    year: "2026",
+    href: "tahti.html",
+    description: "A Chrome extension experiment for reading selected text one word at a time at a controlled pace.",
   },
   {
     id: "project-elisa-audit",
@@ -678,6 +725,12 @@ caseVideoToggles.forEach((caseVideoToggle) => {
 });
 
 const caseVideos = document.querySelectorAll(".case-video");
+
+caseVideos.forEach((video) => {
+  video.muted = true;
+  video.defaultMuted = true;
+  video.volume = 0;
+});
 
 if (caseVideos.length && "IntersectionObserver" in window) {
   const caseVideoObserver = new IntersectionObserver(
