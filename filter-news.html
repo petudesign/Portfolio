@@ -115,6 +115,7 @@
             <a class="active" href="#problem-framing">Problem framing</a>
             <a class="timeline-child" href="#psychology">Why this matters</a>
             <a href="#solution">Solution</a>
+            <a class="timeline-child" href="#control-loop">Control loop</a>
             <a href="#features">Key features</a>
             <a href="#design-challenges">Design challenges</a>
             <a class="timeline-child" href="#false-positives">False positives</a>
@@ -130,6 +131,20 @@
             <h2>Problem framing</h2>
             <p>News browsing can become emotionally repetitive. A user may want to stay informed, but not repeatedly process the same heavy topics across headlines, sidebars, most-read lists, and recommendations.</p>
             <p>The problem was not that news sites show difficult content. The problem was the lack of moment-to-moment control. Sometimes the user does not need a permanent block. They need a softer boundary: <strong>not right now</strong>.</p>
+            <div class="case-context-grid" aria-label="FilterNews product context">
+              <article>
+                <h3>Who this is for</h3>
+                <p>People who still want to read the news, but want temporary control over repeated exposure to specific heavy topics.</p>
+              </article>
+              <article>
+                <h3>User situation</h3>
+                <p>The user opens a news site and sees the same stressful topic repeated across headlines, lists, and recommendations.</p>
+              </article>
+              <article>
+                <h3>Success would mean</h3>
+                <p>The user feels more in control, understands what was softened, and can reveal or disable the filter without losing trust.</p>
+              </article>
+            </div>
             <div class="case-callout">
               <p><strong>Product principle:</strong> FilterNews should reduce repeated exposure without hiding the fact that something was filtered. Relief should not come at the cost of control or awareness.</p>
             </div>
@@ -149,6 +164,18 @@
               </button>
               <figcaption>This was important to test beyond one Finnish news site: the same soft filtering model also works on other news layouts.</figcaption>
             </figure>
+          </section>
+          <section class="case-section case-subsection" id="control-loop">
+            <h3>Control loop</h3>
+            <p>The product needs a short, reversible loop because the user's tolerance can change by day, topic, and site. A permanent block would be too blunt for the problem.</p>
+            <ol class="case-flow" aria-label="FilterNews control flow">
+              <li>Choose topic</li>
+              <li>Set duration</li>
+              <li>Browse normally</li>
+              <li>See filter reason</li>
+              <li>Reveal if needed</li>
+              <li>Let timer expire</li>
+            </ol>
           </section>
           <section class="case-section" id="features">
             <h2>Key features</h2>

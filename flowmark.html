@@ -94,6 +94,7 @@
             <a href="#overview">Overview</a>
             <a class="active" href="#problem-framing">Problem framing</a>
             <a href="#mvp">MVP scope</a>
+            <a class="timeline-child" href="#testing-loop">Testing loop</a>
             <a href="#ai-workflow">AI workflow</a>
             <a href="#risks">Risks</a>
             <a href="#next">Next step</a>
@@ -105,11 +106,37 @@
             <h2>Problem framing</h2>
             <p>Prototype testing tools are useful, but small teams often hesitate when setup, pricing, or third-party dependency feels too heavy for quick internal validation. Flowmark is framed around one practical question: what is the smallest useful testing loop for mobile prototypes?</p>
             <p>The product should not try to become a research suite. Its job is to make one focused test easy to create, share, read, and repeat.</p>
+            <div class="case-context-grid" aria-label="Flowmark product context">
+              <article>
+                <h3>Who this is for</h3>
+                <p>Solo designers, students, and small product teams who need directional feedback before investing in heavier usability testing.</p>
+              </article>
+              <article>
+                <h3>User situation</h3>
+                <p>A designer has a mobile prototype and one risky interaction question, but the current setup cost makes testing easy to postpone.</p>
+              </article>
+              <article>
+                <h3>Success would mean</h3>
+                <p>The team tests earlier, spots the biggest click-path issue, and knows whether the prototype is clear enough to keep moving.</p>
+              </article>
+            </div>
           </section>
           <section class="case-section" id="mvp">
             <h2>MVP scope</h2>
             <p>The first version should cover task links, first-click capture, click heat maps, success and drop-off metrics, and a short AI-assisted summary that helps the designer notice friction faster.</p>
             <p>Anything beyond that, participant panels, advanced recruitment, complex segmentation, and polished reporting, should wait until the basic testing habit is proven.</p>
+          </section>
+          <section class="case-section case-subsection" id="testing-loop">
+            <h3>Testing loop</h3>
+            <p>The MVP should make one loop feel almost disposable: create a task, share it, collect enough directional signal, then decide what to change. The goal is not research-grade certainty. It is faster learning before the design gets too polished to question.</p>
+            <ol class="case-flow" aria-label="Flowmark testing flow">
+              <li>Create task</li>
+              <li>Add prototype</li>
+              <li>Share link</li>
+              <li>Capture first clicks</li>
+              <li>Review friction</li>
+              <li>Decide next change</li>
+            </ol>
           </section>
           <section class="case-section case-ai-workflow" id="ai-workflow">
             <h2>AI-assisted workflow</h2>
@@ -125,7 +152,7 @@
               </article>
               <article>
                 <span>I evaluated</span>
-                <p>Whether the output made decisions clearer, where AI summaries could mislead, and what should be validated next.</p>
+                <p>Whether the output made decisions clearer, where AI summaries could create false confidence, and what should be validated next.</p>
               </article>
             </div>
           </section>

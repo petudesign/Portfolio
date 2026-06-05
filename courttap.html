@@ -92,6 +92,7 @@
             <a href="#overview">Overview</a>
             <a class="active" href="#problem-framing">Problem framing</a>
             <a href="#mvp">MVP scope</a>
+            <a class="timeline-child" href="#match-flow">Match flow</a>
             <a href="#interaction">Interaction rules</a>
             <a href="#next">Next step</a>
           </nav>
@@ -102,11 +103,37 @@
             <h2>Problem framing</h2>
             <p>Casual tennis and padel matches often rely on memory, shouting the score, or checking a phone between points. That works until the match gets close, players switch sides, or someone forgets the score.</p>
             <p>A smartwatch is a good fit only if the interaction is faster than the problem. If scoring requires menus, typing, or careful reading, the product fails in the real context.</p>
+            <div class="case-context-grid" aria-label="CourtTap product context">
+              <article>
+                <h3>Who this is for</h3>
+                <p>Casual tennis and padel players who want to keep score accurately without carrying or checking a phone during play.</p>
+              </article>
+              <article>
+                <h3>User situation</h3>
+                <p>The player is between points, slightly out of breath, often moving, and has only a short glance window before the next serve.</p>
+              </article>
+              <article>
+                <h3>Success would mean</h3>
+                <p>Players add points and undo mistakes quickly enough that scorekeeping does not interrupt the rhythm of the match.</p>
+              </article>
+            </div>
           </section>
           <section class="case-section" id="mvp">
             <h2>MVP scope</h2>
             <p>The first version should support tennis and padel scoring, one-tap point entry for each side, undo, current server, set progress, tie-break handling, and a clear match finished state.</p>
             <p>Post-match history and simple stats can exist later, but they should not shape the first interface. The core job is live scoring.</p>
+          </section>
+          <section class="case-section case-subsection" id="match-flow">
+            <h3>Match flow</h3>
+            <p>The flow should stay close to the rhythm of a match: glance, tap, continue. Anything that requires configuration during play belongs outside the live scoring mode.</p>
+            <ol class="case-flow" aria-label="CourtTap match scoring flow">
+              <li>Start match</li>
+              <li>Choose sport</li>
+              <li>Add point</li>
+              <li>Undo if needed</li>
+              <li>Switch sides</li>
+              <li>Finish match</li>
+            </ol>
           </section>
           <section class="case-section" id="interaction">
             <h2>Interaction rules</h2>

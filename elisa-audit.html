@@ -118,6 +118,7 @@
             <a class="timeline-child" href="#tradeoffs">What I ruled out</a>
             <a class="timeline-child" href="#findings">Findings</a>
             <a href="#solution">Solution</a>
+            <a class="timeline-child" href="#proposed-flow">Proposed flow</a>
             <a href="#final-design">Final design</a>
             <a href="#results">Results</a>
           </nav>
@@ -128,6 +129,20 @@
             <h2>Problem framing</h2>
             <p>I entered Elisa's purchase flow as a regular customer trying to buy a phone. From the cart, I wanted to return to the product page to double-check the device, but there was no clear link back. Pressing checkout felt like the next logical move.</p>
             <p>Instead of moving toward payment, the flow opened a full upsell page. At that point I had already decided to buy an expensive phone, but the interface shifted the task from <strong>complete the purchase</strong> to <strong>review more products</strong>. That moment of hesitation became the focus of this audit.</p>
+            <div class="case-context-grid" aria-label="Elisa audit product context">
+              <article>
+                <h3>Who this affects</h3>
+                <p>Shoppers who have already chosen a high-price device and need reassurance before committing to payment.</p>
+              </article>
+              <article>
+                <h3>User situation</h3>
+                <p>The user expects checkout progress, but is asked to evaluate add-ons before the original purchase feels fully confirmed.</p>
+              </article>
+              <article>
+                <h3>Success would mean</h3>
+                <p>Fewer hesitation points before payment while preserving a clear, optional surface for relevant add-ons.</p>
+              </article>
+            </div>
             <div class="case-callout">
               <p><strong>Product tension:</strong> upsells can make sense commercially, but checkout is a fragile moment. The design needs to support add-on discovery without weakening the user's original purchase intent.</p>
             </div>
@@ -178,6 +193,18 @@
             <p>The cleaner direction is to remove the standalone upsell interruption and move add-ons into the checkout page as a secondary, optional part of the order summary.</p>
             <p>The order summary should lead with the product the user chose: image, model, storage, color, price, and a clear edit or back-to-product option. Under that, Elisa can show a compact add-on module for relevant recommendations, such as protection, case, charger, or subscription options.</p>
             <p>This keeps the commercial opportunity alive, but changes the behavior from <strong>gate</strong> to <strong>option</strong>.</p>
+          </section>
+          <section class="case-section case-subsection" id="proposed-flow">
+            <h3>Proposed flow</h3>
+            <p>The redesigned flow should keep the user's main job intact: confirm the phone, complete details, then decide whether any add-on is worth including.</p>
+            <ol class="case-flow" aria-label="Elisa proposed checkout flow">
+              <li>Review cart</li>
+              <li>Open checkout</li>
+              <li>Confirm phone</li>
+              <li>Complete details</li>
+              <li>Consider add-ons</li>
+              <li>Continue to payment</li>
+            </ol>
           </section>
           <section class="case-section" id="final-design">
             <h2>Final design</h2>

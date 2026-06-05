@@ -2335,6 +2335,63 @@ body.show-case-timeline .case-timeline {
   margin-top: 16px;
 }
 
+.case-context-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.case-context-grid article {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid rgba(23, 23, 23, 0.08);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.case-context-grid h3 {
+  margin-bottom: 9px;
+  color: var(--text);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.case-context-grid p {
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.case-flow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+  padding: 0;
+  list-style: none;
+}
+
+.case-flow li {
+  position: relative;
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  padding: 0 12px;
+  border: 1px solid rgba(0, 143, 120, 0.18);
+  border-radius: 999px;
+  color: #0b5f48;
+  background: rgba(0, 143, 120, 0.07);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.case-flow li + li::before {
+  margin-right: 8px;
+  color: rgba(11, 95, 72, 0.62);
+  content: "->";
+}
+
 .case-ai-workflow {
   margin-bottom: clamp(46px, 5vw, 76px);
   padding: clamp(24px, 4vw, 36px);
@@ -5110,6 +5167,19 @@ body.show-case-timeline .case-timeline {
 
   .case-ai-grid {
     grid-template-columns: 1fr;
+  }
+
+  .case-context-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .case-flow {
+    gap: 7px;
+  }
+
+  .case-flow li {
+    min-height: 32px;
+    font-size: 14px;
   }
 
   .tahti-snapshot-grid {

@@ -105,6 +105,7 @@
             <a class="timeline-child" href="#why-extension">Why extension first</a>
             <a class="timeline-child" href="#research-context">Research context</a>
             <a href="#mvp">MVP scope</a>
+            <a class="timeline-child" href="#pacing">Design detail</a>
             <a href="#interaction">Interaction decisions</a>
             <a href="#risks">Risks</a>
             <a href="#next">Next step</a>
@@ -117,6 +118,20 @@
             <p>Some reading problems start before comprehension. A long block of text can feel heavy before the first sentence is even read. Tahti looks at that starting moment: what if the interface reduced the visible amount of text and gave the user a simple rhythm to follow?</p>
             <p>The starting point is personal: I have mild astigmatism, and ADD makes sustained reading focus harder for me at times. I am also not a particularly fast reader in the traditional line-by-line format. In my own use, Tahti has helped in some situations by reducing visual load, giving the reading session a clearer pace, and letting me move through text faster than I normally would. That is a useful signal, but not enough evidence on its own.</p>
             <p>The product should not be framed as a speed-reading promise. Reading one word at a time can remove useful context, make backtracking harder, and flatten the natural rhythm of paragraphs. A more honest direction is reading support: pace, focus, and temporary structure when ordinary reading feels demanding.</p>
+            <div class="case-context-grid" aria-label="Tahti product context">
+              <article>
+                <h3>Who this is for</h3>
+                <p>People who struggle to start or stay with dense text, especially when the barrier is visual load, focus, or reading fatigue rather than lack of interest.</p>
+              </article>
+              <article>
+                <h3>User situation</h3>
+                <p>The user has found a long article, notes, or documentation page and wants to read one selected part without leaving the current page.</p>
+              </article>
+              <article>
+                <h3>Success would mean</h3>
+                <p>The user starts reading faster, stays with the text longer, and still understands enough for the pace tradeoff to be worth it.</p>
+              </article>
+            </div>
             <div class="case-callout">
               <p><strong>Product principle:</strong> Tahti should help users control reading pace without pretending that faster reading is automatically better reading.</p>
             </div>
@@ -153,6 +168,22 @@
               <li><strong>Comfort settings:</strong> font size, dark/light mode, and a short countdown so the first word is not missed.</li>
               <li><strong>Out of scope:</strong> accounts, analytics, streaks, mobile app, PDF support, AI features, and automatic article extraction.</li>
             </ul>
+            <ol class="case-flow" aria-label="Tahti MVP user flow">
+              <li>Select text</li>
+              <li>Right-click</li>
+              <li>Read with Tahti</li>
+              <li>Set pace</li>
+              <li>Read</li>
+              <li>Pause or rewind</li>
+              <li>Return to page</li>
+            </ol>
+          </section>
+
+          <section class="case-section case-subsection" id="pacing">
+            <h3>Design detail: pacing</h3>
+            <p>A fixed WPM setting was not enough. Reading rhythm depends on punctuation, word length, and language.</p>
+            <p>Instead of advancing every word at the exact same interval, Tahti gives slightly more time to sentence endings, soft breaks, and longer words. The first words also start slower, helping the reader settle into the rhythm.</p>
+            <p>This was a small implementation detail, but an important product decision: the goal was not just speed, but a pace that still feels readable.</p>
           </section>
 
           <section class="case-section" id="interaction">

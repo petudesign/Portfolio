@@ -108,6 +108,7 @@
             <a class="timeline-child" href="#observation">Observation</a>
             <a class="timeline-child" href="#what-i-ruled-out">What I ruled out</a>
             <a href="#solution">Solution</a>
+            <a class="timeline-child" href="#validation">How I would test</a>
             <a href="#reflection">Reflection</a>
           </nav>
         </aside>
@@ -117,6 +118,20 @@
             <h2>Problem framing</h2>
             <p>Car infotainment systems often inherit mobile UI patterns without fully adapting them to the driving context. That becomes a problem when the driver needs to make a quick decision while the vehicle is moving.</p>
             <p>This case focuses on one small interaction: an incoming phone call on the center console screen. The car was a Volkswagen T-Cross, likely around the 2023 model year.</p>
+            <div class="case-context-grid" aria-label="Automotive UX product context">
+              <article>
+                <h3>Who this affects</h3>
+                <p>Drivers who need to answer or decline a call while their attention, reach, and precision are constrained by motion.</p>
+              </article>
+              <article>
+                <h3>User situation</h3>
+                <p>The driver is already managing the road, audio, and vehicle movement when a time-sensitive call decision appears on the center screen.</p>
+              </article>
+              <article>
+                <h3>Success would mean</h3>
+                <p>The driver identifies the caller, makes the decision, and returns attention to the road with fewer glances and less precise tapping.</p>
+              </article>
+            </div>
             <div class="case-callout">
               <p><strong>Design question:</strong> if the system knows the vehicle is moving, why does the call UI still ask for precise tapping?</p>
             </div>
@@ -149,6 +164,10 @@
               <li><strong>Larger accept and decline targets:</strong> less precision is required while reaching forward.</li>
               <li><strong>Context-aware priority:</strong> the UI changes only when the vehicle is moving and the call needs a decision.</li>
             </ul>
+          </section>
+          <section class="case-section case-subsection" id="validation">
+            <h3>How I would test it</h3>
+            <p>I would test the current and proposed layouts in a parked simulation first, then in a controlled driving context. The useful signals are glance time, tap accuracy, reach effort, and how quickly the driver returns attention to the road.</p>
           </section>
           <section class="case-section" id="reflection">
             <h2>Reflection</h2>
