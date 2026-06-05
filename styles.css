@@ -1093,10 +1093,11 @@ h1 em {
 }
 
 .project-media-automotive {
+  --project-card-inset: clamp(20px, 3vw, 42px);
   display: grid;
   overflow: hidden;
   place-items: center;
-  padding: clamp(18px, 2.6vw, 38px);
+  padding: var(--project-card-inset);
   background:
     linear-gradient(135deg, rgba(0, 143, 120, 0.14), rgba(255, 215, 90, 0.14)),
     #e8f2ee;
@@ -1112,23 +1113,57 @@ h1 em {
     #f2f7f0;
 }
 
+.project-media-card {
+  display: grid;
+  overflow: hidden;
+  place-items: center;
+  padding: clamp(20px, 3vw, 42px);
+}
+
+.project-media-card > img {
+  border-radius: 8px;
+  box-shadow: 0 18px 46px rgba(23, 23, 23, 0.12);
+}
+
+.project-media-smartgrocer-card {
+  background:
+    radial-gradient(circle at 18% 22%, rgba(255, 205, 72, 0.28), transparent 34%),
+    radial-gradient(circle at 82% 74%, rgba(0, 143, 120, 0.18), transparent 36%),
+    #eef5ed;
+}
+
+.project-media-smartgrocer-card > img {
+  border-radius: 10px;
+}
+
+.project-media-tahti-card {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(17, 119, 169, 0.16), transparent 36%),
+    radial-gradient(circle at 78% 78%, rgba(0, 143, 120, 0.14), transparent 38%),
+    #eef3f1;
+}
+
+.project-media-tahti-card > img {
+  border-radius: 10px;
+}
+
 .project-media-tahti {
   position: relative;
   display: grid;
   overflow: hidden;
   place-items: center;
   padding: clamp(20px, 3vw, 42px);
-  color: #f7f2e5;
+  color: #fffdf6;
   background:
     radial-gradient(circle at 16% 24%, rgba(23, 119, 169, 0.72), transparent 34%),
     radial-gradient(circle at 82% 30%, rgba(238, 193, 120, 0.72), transparent 36%),
     radial-gradient(circle at 44% 82%, rgba(0, 143, 120, 0.66), transparent 42%),
     linear-gradient(135deg, #225f68, #d4b77c 45%, #2f765f);
   background-size: 180% 180%;
+  animation: tahtiCardGradientDrift 12s ease-in-out infinite alternate;
   isolation: isolate;
 }
 
-.project-media-tahti::before,
 .tahti-hero-visual::before {
   position: absolute;
   inset: -22%;
@@ -1146,12 +1181,12 @@ h1 em {
 
 .tahti-cover-word {
   display: block;
-  color: rgba(255, 252, 241, 0.92);
+  color: rgba(255, 255, 255, 0.98);
   font-size: clamp(64px, 10vw, 154px);
   font-weight: 760;
   letter-spacing: 0;
   line-height: 0.9;
-  text-shadow: 0 24px 58px rgba(23, 23, 23, 0.16);
+  text-shadow: 0 24px 58px rgba(23, 23, 23, 0.18);
 }
 
 .project-media-tahti .tahti-cover-word {
@@ -1162,10 +1197,20 @@ h1 em {
   position: absolute;
   right: clamp(18px, 2.2vw, 30px);
   bottom: clamp(18px, 2.2vw, 28px);
-  color: rgba(255, 252, 241, 0.78);
+  color: rgba(255, 255, 255, 0.82);
   font-size: clamp(13px, 1.4vw, 18px);
   font-weight: 500;
   line-height: 1.2;
+}
+
+@keyframes tahtiCardGradientDrift {
+  0% {
+    background-position: 0% 42%;
+  }
+
+  100% {
+    background-position: 100% 58%;
+  }
 }
 
 @keyframes tahtiGradientDrift {
@@ -1187,6 +1232,37 @@ h1 em {
   transition: transform 220ms ease, filter 220ms ease;
 }
 
+.project-media-video video,
+.project-media-automotive > img,
+.project-media-card > img,
+.project-media-card > video {
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  border-radius: 8px;
+  object-fit: cover;
+  object-position: center center;
+  box-shadow: 0 18px 46px rgba(23, 23, 23, 0.1);
+  transform: none;
+}
+
+.project-media-card > img {
+  border-radius: 10px;
+}
+
+.project-media-card > video {
+  border-radius: 10px;
+  box-shadow: 0 18px 46px rgba(23, 23, 23, 0.12);
+}
+
+.project-media-automotive > img {
+  position: absolute;
+  inset: var(--project-card-inset);
+  width: calc(100% - var(--project-card-inset) - var(--project-card-inset));
+  height: calc(100% - var(--project-card-inset) - var(--project-card-inset));
+  object-position: center 42%;
+}
+
 .project-media video {
   display: block;
   width: 100%;
@@ -1195,14 +1271,7 @@ h1 em {
 }
 
 .project-media-video video {
-  width: 100%;
-  height: auto;
-  max-height: 100%;
   border-radius: 6px;
-  object-fit: contain;
-  object-position: center center;
-  box-shadow: 0 18px 46px rgba(23, 23, 23, 0.1);
-  transform: none;
 }
 
 .mobile-preview-image {
@@ -1228,12 +1297,12 @@ h1 em {
 
 .project-media-automotive > img,
 .project-media-courttap > img {
-  width: 100%;
-  height: auto;
-  max-height: 100%;
   border-radius: 6px;
-  object-fit: contain;
-  box-shadow: 0 18px 46px rgba(23, 23, 23, 0.1);
+}
+
+.project-media-tahti-card > video,
+.project-media-tahti-card > img {
+  object-position: 68% center;
 }
 
 .automotive-preview-after {
@@ -4595,11 +4664,13 @@ body.show-case-timeline .case-timeline {
   }
 
   .project-media-video video,
+  .project-media-card-video video,
   .media-preview-video video {
     display: none;
   }
 
   .project-media-video .mobile-preview-image,
+  .project-media-card-video .mobile-preview-image,
   .media-preview-video .mobile-preview-image {
     display: block;
     width: 100%;
@@ -4800,13 +4871,13 @@ body.show-case-timeline .case-timeline {
   }
 
   .hero {
-    gap: 58px;
-    padding-top: 58px;
-    padding-bottom: 54px;
+    gap: 34px;
+    padding-top: 32px;
+    padding-bottom: 34px;
   }
 
   .hero-cta {
-    margin-top: 26px;
+    margin-top: 18px;
   }
 
   .hero-copy::before {
@@ -4824,11 +4895,15 @@ body.show-case-timeline .case-timeline {
     display: grid;
     justify-items: start;
     row-gap: 20px;
-    margin-bottom: 34px;
+    margin-bottom: 18px;
   }
 
   .tag::after {
     display: none;
+  }
+
+  .tag {
+    font-size: 12px;
   }
 
   .tag-yellow {
@@ -4843,7 +4918,8 @@ body.show-case-timeline .case-timeline {
   }
 
   h1 {
-    font-size: clamp(48px, 14vw, 64px);
+    font-size: clamp(42px, 11.6vw, 54px);
+    line-height: 1.12;
   }
 
   .hero-intro-moi,
@@ -4871,7 +4947,13 @@ body.show-case-timeline .case-timeline {
   }
 
   h1 em {
-    font-size: clamp(58px, 16vw, 74px);
+    font-size: clamp(50px, 13.2vw, 64px);
+  }
+
+  .hero-meta {
+    margin-top: 20px;
+    font-size: 17px;
+    line-height: 1.34;
   }
 
   .not-found {
@@ -5194,7 +5276,34 @@ body.show-case-timeline .case-timeline {
   }
 
   .hero {
-    padding-top: 48px;
+    gap: 28px;
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+
+  .tag-pink {
+    margin-left: clamp(52px, 15vw, 68px);
+  }
+
+  h1 {
+    font-size: clamp(39px, 10.8vw, 46px);
+    line-height: 1.1;
+  }
+
+  h1 em {
+    font-size: clamp(46px, 12vw, 54px);
+  }
+
+  .hero-meta {
+    max-width: 34ch;
+    margin-top: 18px;
+    font-size: 16px;
+  }
+
+  .hero-cta {
+    min-height: 40px;
+    padding: 0 18px;
+    font-size: 15px;
   }
 
   .shavikki-device {

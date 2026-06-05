@@ -203,7 +203,7 @@ const companionContent = {
       {
         label: "Give me the 30-second version",
         answer:
-          "Flowmark is an early concept for a lightweight internal prototype testing platform. The point is not to replace a full research suite, but to make quick mobile tests easier with task links, first-click data, heat maps, success metrics, and concise AI-assisted UX insights.",
+          "Flowmark is an early concept for a lighter prototype feedback loop. The point is not to replace a full research suite or pretend it is a finished testing product, but to explore how teams could learn from mobile prototype tasks faster.",
       },
       {
         label: "What is this project about?",
@@ -456,7 +456,7 @@ const caseStudies = [
     year: "2026",
     href: "shavikki.html",
     image: "assets/shavikki-kaappikuva.png",
-    description: "Reducing grocery food waste through a branded cabinet, employee workflow, and customer-facing concept.",
+    description: "Making near-expiry food easier for store employees to handle and customers to choose.",
   },
   {
     id: "project-flowmark",
@@ -465,7 +465,7 @@ const caseStudies = [
     year: "2026",
     href: "flowmark.html",
     image: "assets/flowmark-preview.svg",
-    description: "A lightweight internal-use platform concept for mobile prototype testing and UX insight summaries.",
+    description: "A concept for making mobile prototype feedback loops lighter and easier to repeat.",
   },
   {
     id: "project-filter-news",
@@ -474,7 +474,7 @@ const caseStudies = [
     year: "2026",
     href: "filter-news.html",
     image: "assets/filternews-bbc.png",
-    description: "Reducing cognitive load in news consumption through filtering and hierarchy.",
+    description: "Soft news filtering to prevent cognitive overload.",
   },
   {
     id: "project-tahti",
@@ -516,7 +516,7 @@ const caseStudies = [
     meta: "Retail self-scanning",
     year: "2025",
     href: "smartgrocer.html",
-    description: "A Kesko self-scanning concept connecting dedicated scanners, K-Plussa, shopping list sync, and store guidance.",
+    description: "A Kesko self-scanning concept asking what happens when the scanner knows the shopping list.",
   },
 ];
 
