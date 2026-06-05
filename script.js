@@ -464,7 +464,7 @@ const caseStudies = [
     meta: "Prototype testing",
     year: "2026",
     href: "flowmark.html",
-    image: "assets/flowmark-preview.svg",
+    image: "assets/flowmark1.png",
     description: "A concept for making mobile prototype feedback loops lighter and easier to repeat.",
   },
   {
@@ -473,7 +473,8 @@ const caseStudies = [
     meta: "Attention UX",
     year: "2026",
     href: "filter-news.html",
-    image: "assets/filternews-bbc.png",
+    video: "assets/filter-news-preview.mp4",
+    poster: "assets/filternews-bbc-760.webp",
     description: "Soft news filtering to prevent cognitive overload.",
   },
   {
@@ -482,6 +483,8 @@ const caseStudies = [
     meta: "Reading support",
     year: "2026",
     href: "tahti.html",
+    video: "assets/tahtivideo.mp4",
+    poster: "assets/tahtiUIv3.png",
     description: "A Chrome extension experiment for reading selected text one word at a time at a controlled pace.",
   },
   {
@@ -490,7 +493,8 @@ const caseStudies = [
     meta: "Checkout audit",
     year: "2026",
     href: "elisa-audit.html",
-    image: "assets/elisa-final-design.png",
+    video: "assets/elisa-checkout-preview.mp4",
+    poster: "assets/elisa-final-design-760.webp",
     description: "Protecting purchase intent by moving upsells out of the blocking checkout step.",
   },
   {
@@ -499,6 +503,7 @@ const caseStudies = [
     meta: "Contextual UX",
     year: "2026",
     href: "automotive.html",
+    image: "assets/automotiveux-cover.jpg",
     description: "Looking at attention, safety, and interface decisions in a driving context.",
   },
   {
@@ -516,6 +521,7 @@ const caseStudies = [
     meta: "Retail self-scanning",
     year: "2025",
     href: "smartgrocer.html",
+    image: "assets/SmartGrocer.png",
     description: "A Kesko self-scanning concept asking what happens when the scanner knows the shopping list.",
   },
 ];
@@ -1207,7 +1213,7 @@ const renderMoreCaseStudies = () => {
 
   const heading = document.createElement("h2");
   heading.id = "more-cases-title";
-  heading.textContent = "More case studies";
+  heading.textContent = "More projects";
   section.append(heading);
 
   const list = document.createElement("div");
@@ -1221,7 +1227,34 @@ const renderMoreCaseStudies = () => {
     const media = document.createElement("span");
     media.className = "more-case-media";
 
-    if (caseStudy.image) {
+    if (caseStudy.video) {
+      const video = document.createElement("video");
+      video.src = caseStudy.video;
+      video.muted = true;
+      video.defaultMuted = true;
+      video.loop = true;
+      video.playsInline = true;
+      video.preload = "metadata";
+
+      if (caseStudy.poster) {
+        video.poster = caseStudy.poster;
+      }
+
+      link.addEventListener("pointerenter", (event) => {
+        if (event.pointerType !== "mouse") {
+          return;
+        }
+
+        video.play().catch(() => {});
+      });
+
+      link.addEventListener("pointerleave", () => {
+        video.pause();
+        video.currentTime = 0.01;
+      });
+
+      media.append(video);
+    } else if (caseStudy.image) {
       const image = document.createElement("img");
       image.src = caseStudy.image;
       image.alt = "";
