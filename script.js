@@ -1,8 +1,9 @@
-const projectCards = document.querySelectorAll(".project-card");
 const menuToggle = document.querySelector(".menu-toggle");
 const mainNav = document.querySelector(".main-nav");
 const mainNavLinks = document.querySelectorAll(".main-nav a");
 const topLinks = document.querySelectorAll('a[href="#top"]');
+const siteHeader = document.querySelector(".site-header");
+const prototypeLab = document.querySelector(".prototype-lab");
 let companionTrigger = document.querySelector(".companion-trigger");
 let projectCompanion = document.querySelector(".project-companion");
 let companionPanel = document.querySelector(".companion-panel");
@@ -17,6 +18,28 @@ if (document.body.dataset.page === "home") {
       document.body.classList.add("hero-ready");
     });
   });
+}
+
+if (siteHeader && prototypeLab) {
+  let headerThemeFrame = 0;
+
+  const updateHeaderTheme = () => {
+    headerThemeFrame = 0;
+    const headerHeight = siteHeader.getBoundingClientRect().height;
+    const labRect = prototypeLab.getBoundingClientRect();
+    const overlapsHeader = labRect.top <= headerHeight && labRect.bottom > 0;
+    siteHeader.classList.toggle("is-dark", overlapsHeader);
+  };
+
+  const requestHeaderThemeUpdate = () => {
+    if (!headerThemeFrame) {
+      headerThemeFrame = requestAnimationFrame(updateHeaderTheme);
+    }
+  };
+
+  updateHeaderTheme();
+  window.addEventListener("scroll", requestHeaderThemeUpdate, { passive: true });
+  window.addEventListener("resize", requestHeaderThemeUpdate);
 }
 
 const companionContent = {
@@ -659,11 +682,26 @@ caseVideoToggles.forEach((caseVideoToggle) => {
 });
 
 const caseVideos = document.querySelectorAll(".case-video");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 caseVideos.forEach((video) => {
   video.muted = true;
   video.defaultMuted = true;
   video.volume = 0;
+
+  if (prefersReducedMotion) {
+    const toggle = video.closest(".case-media-shell")?.querySelector(".case-video-toggle");
+    const toggleLabel = toggle?.querySelector(".case-video-toggle-label");
+
+    video.pause();
+    video.dataset.userPaused = "true";
+    toggle?.classList.add("is-paused");
+    toggle?.setAttribute("aria-label", "Play video");
+    toggle?.setAttribute("aria-pressed", "true");
+    if (toggleLabel) {
+      toggleLabel.textContent = "Play";
+    }
+  }
 });
 
 if (caseVideos.length && "IntersectionObserver" in window) {
@@ -773,23 +811,6 @@ caseStudyTargets.forEach((target) => {
   target.addEventListener("pointerleave", () => {
     target.classList.remove("is-cursor-active");
   });
-});
-
-const revealProjects = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-        revealProjects.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.16 }
-);
-
-projectCards.forEach((card) => {
-  card.classList.add("will-reveal");
-  revealProjects.observe(card);
 });
 
 filterButtons.forEach((button) => {
