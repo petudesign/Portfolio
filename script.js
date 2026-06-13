@@ -13,33 +13,53 @@ let companionPrompts = document.querySelector(".companion-prompts");
 let companionHeaderIcon = document.querySelector(".companion-header-icon");
 
 if (document.body.dataset.page === "home") {
-  requestAnimationFrame(() => {
+  const revealHero = () => {
     requestAnimationFrame(() => {
-      document.body.classList.add("hero-ready");
+      requestAnimationFrame(() => {
+        document.body.classList.add("hero-ready");
+      });
     });
-  });
+  };
+
+  if (document.fonts) {
+    const heroFontsReady = Promise.all([
+      document.fonts.load('500 1em "Cabinet Grotesk"'),
+      document.fonts.load('600 1em "Melodrama"'),
+      document.fonts.load('400 1em "Satoshi"'),
+    ]);
+    const revealFallback = new Promise((resolve) => window.setTimeout(resolve, 1200));
+
+    Promise.race([heroFontsReady, revealFallback]).then(revealHero, revealHero);
+  } else {
+    revealHero();
+  }
 }
 
 if (siteHeader && prototypeLab) {
-  let headerThemeFrame = 0;
+  let headerThemeObserver;
+  let headerThemeResizeFrame = 0;
 
-  const updateHeaderTheme = () => {
-    headerThemeFrame = 0;
-    const headerHeight = siteHeader.getBoundingClientRect().height;
-    const labRect = prototypeLab.getBoundingClientRect();
-    const overlapsHeader = labRect.top <= headerHeight && labRect.bottom > 0;
-    siteHeader.classList.toggle("is-dark", overlapsHeader);
+  const observeHeaderTheme = () => {
+    headerThemeObserver?.disconnect();
+    const headerHeight = 68;
+    const bottomMargin = Math.max(0, window.innerHeight - headerHeight);
+
+    headerThemeObserver = new IntersectionObserver(
+      ([entry]) => siteHeader.classList.toggle("is-dark", entry.isIntersecting),
+      { rootMargin: `0px 0px -${bottomMargin}px 0px` },
+    );
+    headerThemeObserver.observe(prototypeLab);
   };
 
-  const requestHeaderThemeUpdate = () => {
-    if (!headerThemeFrame) {
-      headerThemeFrame = requestAnimationFrame(updateHeaderTheme);
+  observeHeaderTheme();
+  window.addEventListener("resize", () => {
+    if (!headerThemeResizeFrame) {
+      headerThemeResizeFrame = requestAnimationFrame(() => {
+        headerThemeResizeFrame = 0;
+        observeHeaderTheme();
+      });
     }
-  };
-
-  updateHeaderTheme();
-  window.addEventListener("scroll", requestHeaderThemeUpdate, { passive: true });
-  window.addEventListener("resize", requestHeaderThemeUpdate);
+  });
 }
 
 const companionContent = {
@@ -627,6 +647,14 @@ const hoverPreviewVideos = document.querySelectorAll(".hover-preview-video");
 const caseVideoToggles = document.querySelectorAll(".case-video-toggle");
 const caseImageZoomButtons = document.querySelectorAll(".case-image-zoom");
 
+const loadDeferredVideo = (video) => {
+  if (!video.src && video.dataset.src) {
+    video.src = video.dataset.src;
+    video.preload = "metadata";
+    video.load();
+  }
+};
+
 hoverPreviewVideos.forEach((video) => {
   const previewCard = video.closest(".project-media, .media-preview");
 
@@ -639,6 +667,7 @@ hoverPreviewVideos.forEach((video) => {
       return;
     }
 
+    loadDeferredVideo(video);
     video.play().catch(() => {});
   });
 
@@ -659,6 +688,7 @@ caseVideoToggles.forEach((caseVideoToggle) => {
 
   caseVideoToggle.addEventListener("click", () => {
     if (caseVideo.paused) {
+      loadDeferredVideo(caseVideo);
       caseVideo.play().catch(() => {});
       caseVideo.dataset.userPaused = "false";
       caseVideoToggle.classList.remove("is-paused");
@@ -720,6 +750,7 @@ if (caseVideos.length && "IntersectionObserver" in window) {
         }
 
         if (video.dataset.userPaused !== "true") {
+          loadDeferredVideo(video);
           video.play().catch(() => {});
         }
       });

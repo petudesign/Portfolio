@@ -35,9 +35,9 @@
         ]
       }
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="preload" href="Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="CabinetGrotesk_Complete/Fonts/WEB/fonts/CabinetGrotesk-Variable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="Melodrama_Complete/Fonts/WEB/fonts/Melodrama-Variable.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="styles.css">
     <script defer src="/_vercel/insights/script.js"></script>
   </head>
@@ -100,7 +100,7 @@
                 srcset="assets/shavikki-kaappikuva-480.webp 480w, assets/shavikki-kaappikuva-768.webp 768w, assets/shavikki-kaappikuva-1100.webp 1100w"
                 sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1240px) min(780px, calc(100vw - 56px)), 520px"
               >
-              <img src="assets/shavikki-kaappikuva.png" alt="S-Hävikki branded food waste cabinet concept in a grocery store" decoding="async" fetchpriority="high">
+              <img src="assets/shavikki-kaappikuva.png" width="1219" height="816" alt="S-Hävikki branded food waste cabinet concept in a grocery store" decoding="async" fetchpriority="high">
             </picture>
             <span class="selected-card-scrim" aria-hidden="true"></span>
             <span class="selected-card-tags" aria-hidden="true">
@@ -114,7 +114,7 @@
               </span>
             </span>
             <span class="selected-card-action" aria-hidden="true">
-              <img src="assets/arrow-up-right.svg" alt="">
+              <img src="assets/arrow-up-right.svg" width="24" height="24" alt="">
             </span>
             <span class="selected-cover selected-cover-shavikki">
               <span class="selected-cover-title">S-Hävikki</span>
@@ -127,16 +127,18 @@
             <a class="media-preview media-preview-filternews media-preview-video" href="filter-news.html" aria-label="Open FilterNews case">
               <video
                 class="hover-preview-video"
-                src="assets/filter-news-preview.mp4"
+                data-src="assets/filter-news-preview.mp4"
                 poster="assets/filternews-bbc-760.webp"
                 muted
                 loop
                 playsinline
-                preload="metadata"
+                preload="none"
               ></video>
               <img
                 class="mobile-preview-image"
                 src="assets/filternews-bbc-520.webp"
+                width="520"
+                height="258"
                 srcset="assets/filternews-bbc-520.webp 520w, assets/filternews-bbc-760.webp 760w"
                 sizes="(max-width: 760px) calc(100vw - 64px), 260px"
                 alt="BBC news page softened by FilterNews topic controls"
@@ -147,7 +149,7 @@
                 <span>Product</span>
               </span>
               <span class="selected-card-action" aria-hidden="true">
-                <img src="assets/arrow-up-right.svg" alt="">
+                <img src="assets/arrow-up-right.svg" width="24" height="24" alt="">
               </span>
               <span class="selected-cover selected-cover-filternews">
                 <span class="selected-cover-row">
@@ -166,13 +168,13 @@
             </div>
             <div class="selected-project">
             <a class="media-preview media-preview-flowmark" href="flowmark.html" aria-label="Open Flowmark case">
-              <img src="assets/flowmark1.png" alt="Flowmark first-click test builder interface" decoding="async">
+              <img src="assets/flowmark-card.webp" width="1912" height="935" alt="Flowmark first-click test builder interface" decoding="async">
               <span class="selected-card-scrim" aria-hidden="true"></span>
               <span class="selected-card-tags" aria-hidden="true">
                 <span>SaaS</span>
               </span>
               <span class="selected-card-action" aria-hidden="true">
-                <img src="assets/arrow-up-right.svg" alt="">
+                <img src="assets/arrow-up-right.svg" width="24" height="24" alt="">
               </span>
               <span class="selected-cover selected-cover-flowmark">
                 <span class="selected-cover-row">
@@ -216,9 +218,9 @@
                 </span>
                 <span class="project-reel-scrim" aria-hidden="true"></span>
                 <span class="project-reel-frame">
-                  <video class="hover-preview-video" src="assets/elisa-checkout-preview.mp4" muted loop playsinline preload="metadata"></video>
+                  <video class="hover-preview-video" data-src="assets/elisa-checkout-preview.mp4" muted loop playsinline preload="none"></video>
                 </span>
-                <img class="mobile-preview-image" src="assets/elisa-final-design-760.webp" alt="Elisa checkout redesign" decoding="async" loading="lazy">
+                <img class="mobile-preview-image" src="assets/elisa-final-design-760.webp" width="760" height="480" alt="Elisa checkout redesign" decoding="async" loading="lazy">
               </span>
               <span class="project-row-content">
                 <span class="project-row-kicker"><span>01 / 04</span><span>Checkout / Conversion</span></span>
@@ -243,9 +245,9 @@
                 </span>
                 <span class="project-reel-scrim" aria-hidden="true"></span>
                 <span class="project-reel-frame project-reel-frame-tahti">
-                  <video class="hover-preview-video" src="assets/tahtivideo.mp4" poster="assets/tahtiUIv3.png" muted loop playsinline preload="metadata"></video>
+                  <video class="hover-preview-video" data-src="assets/tahtivideo.mp4" poster="assets/tahtiUIv3.png" muted loop playsinline preload="none"></video>
                 </span>
-                <img class="mobile-preview-image" src="assets/tahtiUIv3.png" alt="Tahti reader overlay prototype" decoding="async" loading="lazy">
+                <img class="mobile-preview-image" src="assets/tahtiUIv3.png" width="1874" height="933" alt="Tahti reader overlay prototype" decoding="async" loading="lazy">
               </span>
               <span class="project-row-content">
                 <span class="project-row-kicker"><span>02 / 04</span><span>Reading / Focus</span></span>
@@ -262,7 +264,7 @@
           <article class="project-card" id="automotive">
             <a class="project-row" href="automotive.html" aria-label="Open Automotive UX case">
               <span class="project-media project-media-card project-media-automotive">
-                <img src="assets/automotiveux-cover.jpg" alt="Automotive infotainment interface shown inside a car cockpit" decoding="async" loading="lazy">
+                <img src="assets/automotiveux-cover.jpg" width="860" height="682" alt="Automotive infotainment interface shown inside a car cockpit" decoding="async" loading="lazy">
               </span>
               <span class="project-row-content">
                 <span class="project-row-kicker"><span>03 / 04</span><span>In-car / Attention</span></span>
@@ -286,7 +288,7 @@
           <article class="project-card" id="smartgrocer">
             <a class="project-row" href="smartgrocer.html" aria-label="Open SmartGrocer case">
               <span class="project-media project-media-card project-media-smartgrocer-card">
-                <img src="assets/SmartGrocer.png" alt="SmartGrocer self-scanning handheld scanner interface in a grocery basket" decoding="async" loading="lazy">
+                <img src="assets/smartgrocer-card.webp" width="1536" height="1024" alt="SmartGrocer self-scanning handheld scanner interface in a grocery basket" decoding="async" loading="lazy">
               </span>
               <span class="project-row-content">
                 <span class="project-row-kicker"><span>04 / 04</span><span>Retail / Self-scanning</span></span>
@@ -318,7 +320,7 @@
           <div class="lab-board" aria-label="Useful small builds">
             <a class="lab-card lab-card-featured" href="courttap.html" aria-label="Open CourtTap smartwatch scoring concept">
               <span class="lab-card-media">
-                <img src="assets/courttap-preview.svg" alt="CourtTap smartwatch scoring interface for tennis and padel" decoding="async" loading="lazy">
+                <img src="assets/courttap-preview.svg" width="1200" height="800" alt="CourtTap smartwatch scoring interface for tennis and padel" decoding="async" loading="lazy">
               </span>
               <span class="lab-card-content">
                 <span class="lab-card-tags">
@@ -332,7 +334,7 @@
 
             <article class="lab-card lab-card-tool">
               <span class="lab-card-media lab-card-tool-media">
-                <img src="assets/font-license-checker-ui.png" alt="Font License Checker interface showing a Satoshi font specimen and an OFL 1.1 safe-to-use result" decoding="async" loading="lazy">
+                <img src="assets/font-license-checker-ui.webp" width="1536" height="1024" alt="Font License Checker interface showing a Satoshi font specimen and an OFL 1.1 safe-to-use result" decoding="async" loading="lazy">
               </span>
               <span class="lab-card-content">
                 <span class="lab-card-tags">
@@ -346,7 +348,7 @@
 
             <div class="lab-card-stack">
               <article class="lab-reel case-media-shell">
-                <video class="case-video" src="assets/filter-news-preview.mp4" muted loop playsinline autoplay preload="metadata"></video>
+                <video class="case-video" data-src="assets/filter-news-preview.mp4" poster="assets/filternews-bbc-760.webp" muted loop playsinline preload="none"></video>
                 <span class="lab-reel-scrim" aria-hidden="true"></span>
                 <span class="lab-reel-copy">
                   <span>Prototype reel</span>

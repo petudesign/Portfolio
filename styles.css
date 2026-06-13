@@ -1,4 +1,10 @@
-@import url("https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700&display=swap");
+@font-face {
+  font-family: "Satoshi";
+  src: url("Satoshi_Complete/Fonts/WEB/fonts/Satoshi-Variable.woff2") format("woff2");
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
 
 @font-face {
   font-family: "Cabinet Grotesk";
@@ -20,9 +26,9 @@
   --bg: #f4f2ed;
   --surface: #fbfbfb;
   --text: #171717;
-  --muted: #6f6f6f;
+  --muted: #686868;
   --nav-muted: #606060;
-  --brand-muted: #747474;
+  --brand-muted: #686868;
   --line: #d8d8d8;
   --purple: #583973;
   --yellow: #ffd75a;
