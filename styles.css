@@ -5690,6 +5690,41 @@ body.show-case-timeline .case-timeline {
     padding: 46px 0 50px;
   }
 
+  .project-year-group {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    border-top: 0;
+  }
+
+  .project-year-group::before {
+    display: grid;
+    min-height: 44px;
+    align-items: center;
+    color: var(--text);
+    background:
+      linear-gradient(
+        90deg,
+        var(--line) 0 calc(50% - 34px),
+        transparent calc(50% - 34px) calc(50% + 34px),
+        var(--line) calc(50% + 34px) 100%
+      ) center / 100% 1px no-repeat;
+    content: attr(data-year);
+    font-size: 14px;
+    font-weight: 600;
+    grid-row: 1;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    text-align: center;
+  }
+
+  .project-year-marker {
+    display: none;
+  }
+
+  .project-year-projects {
+    grid-row: 2;
+  }
+
   .project-row .project-media {
     aspect-ratio: 1.35 / 1;
   }
