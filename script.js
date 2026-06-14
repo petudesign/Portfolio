@@ -4,6 +4,8 @@ const mainNavLinks = document.querySelectorAll(".main-nav a");
 const topLinks = document.querySelectorAll('a[href="#top"]');
 const siteHeader = document.querySelector(".site-header");
 const prototypeLab = document.querySelector(".prototype-lab");
+const prototypeLabThemeStart = document.querySelector(".prototype-lab-theme-start");
+const prototypeLabThemeEnd = document.querySelector(".prototype-lab-theme-end");
 let companionTrigger = document.querySelector(".companion-trigger");
 let projectCompanion = document.querySelector(".project-companion");
 let companionPanel = document.querySelector(".companion-panel");
@@ -35,31 +37,32 @@ if (document.body.dataset.page === "home") {
   }
 }
 
-if (siteHeader && prototypeLab) {
-  let headerThemeObserver;
-  let headerThemeResizeFrame = 0;
+if (siteHeader && prototypeLabThemeStart && prototypeLabThemeEnd) {
+  let labStartPassed = false;
+  let labEndPassed = false;
 
-  const observeHeaderTheme = () => {
-    headerThemeObserver?.disconnect();
-    const headerHeight = 68;
-    const bottomMargin = Math.max(0, window.innerHeight - headerHeight);
-
-    headerThemeObserver = new IntersectionObserver(
-      ([entry]) => siteHeader.classList.toggle("is-dark", entry.isIntersecting),
-      { rootMargin: `0px 0px -${bottomMargin}px 0px` },
-    );
-    headerThemeObserver.observe(prototypeLab);
+  const updateHeaderTheme = () => {
+    siteHeader.classList.toggle("is-dark", labStartPassed && !labEndPassed);
   };
 
-  observeHeaderTheme();
-  window.addEventListener("resize", () => {
-    if (!headerThemeResizeFrame) {
-      headerThemeResizeFrame = requestAnimationFrame(() => {
-        headerThemeResizeFrame = 0;
-        observeHeaderTheme();
+  const headerThemeObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const hasPassedHeader = !entry.isIntersecting && entry.boundingClientRect.top < 68;
+
+        if (entry.target === prototypeLabThemeStart) {
+          labStartPassed = hasPassedHeader;
+        } else {
+          labEndPassed = hasPassedHeader;
+        }
       });
-    }
-  });
+      updateHeaderTheme();
+    },
+    { rootMargin: "-68px 0px 0px 0px" },
+  );
+
+  headerThemeObserver.observe(prototypeLabThemeStart);
+  headerThemeObserver.observe(prototypeLabThemeEnd);
 }
 
 const companionContent = {
